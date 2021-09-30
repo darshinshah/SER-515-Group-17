@@ -1,0 +1,12 @@
+.teamspage{
+
+}
+
+.teamspage__content{
+    height: 120rem;
+    background-color: aliceblue;
+}
+.teamspage__footer{
+    height: 20rem;
+    background-color: #007cc7;
+}
