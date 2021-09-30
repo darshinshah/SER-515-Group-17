@@ -8,7 +8,7 @@ public class homepageservice {
 	
 	@GetMapping("/greeting")
 	public String greetingApi() {
-		return "Hii, ASU";
+		return "Hii,  ASU";
 	}
 
 }
