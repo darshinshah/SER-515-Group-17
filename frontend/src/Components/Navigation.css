@@ -1,0 +1,9 @@
+.navlink{
+    color: white;
+    text-decoration: none;
+}
+.navigation-buttons{
+    /* float: right; */
+    display: flex;
+    justify-content: center;
+}
