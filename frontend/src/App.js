@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Greet from './Components/Greet'
+import LoginBox from './Components/LoginBox'
 
 function App() {
   function openAboutUs(){
@@ -35,6 +36,7 @@ function App() {
       </button>
 
       <Greet></Greet>
+      <LoginBox></LoginBox>
 
     </div>
   );
