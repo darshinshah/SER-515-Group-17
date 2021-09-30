@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Greet from './Components/Greet'
 import LoginBox from './Components/LoginBox'
+import Players from './Components/Players'
 
 function App() {
   function openAboutUs(){
@@ -37,6 +38,7 @@ function App() {
 
       <Greet></Greet>
       <LoginBox></LoginBox>
+      <Players></Players>
 
     </div>
   );
