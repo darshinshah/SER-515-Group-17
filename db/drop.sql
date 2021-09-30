@@ -1,0 +1,1 @@
+DROP TABLE Coach; DROP TABLE Player; DROP TABLE Referee; DROP TABLE Games; DROP TABLE Teams; DROP TABLE Manager; DROP TABLE ManagerType; DROP TABLE TournamentDirector;
