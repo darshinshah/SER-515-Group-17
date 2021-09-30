@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.asu.group17.models.Login;
-import com.asu.group17.models.Player;
+import com.asu.group17.model.Login;
+import com.asu.group17.model.Player;
 import com.asu.group17.repository.PlayerRepository;
 import com.asu.group17.repository.UserRepository;
 

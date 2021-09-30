@@ -1,4 +1,4 @@
-package com.asu.group17.models;
+package com.asu.group17.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
