@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #12232E;
 }
 
 .App-logo {
@@ -26,6 +27,18 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.homepage-navbar{
+  /* display: flex;
+  justify-content: space-between; */
+}
+.homepage-navbar__header{
+  color: #EEFBFB;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+  /* float: left; */
 }
 
 @keyframes App-logo-spin {
