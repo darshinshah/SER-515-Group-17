@@ -1,0 +1,23 @@
+.sponsorspage{
+}
+.sponsorspage__content{
+    height: 120rem;
+    background-color: white;
+    justify-content: space-evenly;
+    text-align: justify;
+}
+.sponsorphoto{
+    height: 200px;
+    width: 200px;
+}
+.sponsorspage__footer{
+    height: 10rem;
+    background-color: 007cc7;
+    
+}
+
+.header{
+    font-size: 30px;
+    font-weight: bold;
+    color: darkolivegreen;
+}
