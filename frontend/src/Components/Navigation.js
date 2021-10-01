@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import NavBarButton from './NavBarButton';
 import './Navigation.css'
 function openAboutUs(){
-   console.log('About us clicked.');
+   // console.log('About us clicked.');
 }
 const Navigation = () => {
     return (
