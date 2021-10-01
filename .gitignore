@@ -1,9 +1,12 @@
 .metadata/
 frontend/package-lock.json
 frontend/package-lock.json
+.metadata
+frontend/package-lock.json
 .DS_Store
 backend/.DS_Store
 backend/.classpath
 backend/.project
 backend/.settings
 backend/target/
+backend/target

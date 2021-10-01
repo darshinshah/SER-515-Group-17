@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navigation from './Components/Navigation';
 import Home from './Components/Home';
 import Teams from './Components/Teams';
+import Sponsors from './Components/Sponsors';
 // import NavBarComp from './Components/NavBarComp';
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
              <Route path="/rules" component={Rules}/>
              <Route path="/sponsors" component={Sponsors}/> */}
              <Route path="/about" component={AboutUs}/>
+             <Route path="/sponsors" component={Sponsors}/>
            </Switch>
         </div> 
       </BrowserRouter>
