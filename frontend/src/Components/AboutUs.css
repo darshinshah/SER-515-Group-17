@@ -1,3 +1,12 @@
-.page-margin{
-    /* margin-top: 40px; */
+.aboutpage{
+
+}
+
+.aboutpage__content{
+    height: 120rem;
+    background-color: aliceblue;
+}
+.aboutpage__footer{
+    height: 20rem;
+    background-color: #12232e;
 }

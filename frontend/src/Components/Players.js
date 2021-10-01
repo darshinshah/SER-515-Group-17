@@ -14,6 +14,7 @@ const Players = ()=>{
         // )
         const data = [
             {
+            "id": 123,
               "playerid": 1,
               "firstName": "Jenny Chan",
               "lastName": "3 waterfoot road",
