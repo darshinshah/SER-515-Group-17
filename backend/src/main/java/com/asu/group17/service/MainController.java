@@ -18,7 +18,10 @@ public class MainController {
 	@Autowired
 	PlayerRepository playerRepository;
 	
-	
+	@GetMapping("/greeting")
+	public String greetingApi() {
+		return "Hii,  ASU";
+	}
 	
 	@CrossOrigin(origins = "*")
 	@GetMapping("/players")
