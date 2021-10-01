@@ -1,12 +1,19 @@
 .aboutpage{
-
 }
-
 .aboutpage__content{
     height: 120rem;
-    background-color: aliceblue;
+    background-color: white;
+    justify-content: space-evenly;
+    text-align: justify;
 }
 .aboutpage__footer{
-    height: 20rem;
-    background-color: #12232e;
+    height: 10rem;
+    background-color: 007cc7;
+    
+}
+
+.header{
+    font-size: 30px;
+    font-weight: bold;
+    color: darkolivegreen;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PlayerService from '../Services/player.service'
+import getPlayerData from '../Services/player.service'
 import './Players.css'
 
 const Players = ()=>{
@@ -7,24 +7,23 @@ const Players = ()=>{
     const [playerData, setPlayerData] = useState([]);
 
     useEffect(()=>{
-        // PlayerService.getPlayerData().then(
-        //     (response) =>{
-        //         setPlayerData(response.data)
-        //     }
-        // )
-        const data = [
-            {
-            "id": 123,
-              "playerid": 1,
-              "firstName": "Jenny Chan",
-              "lastName": "3 waterfoot road",
-              "emailId": "jenny.chan@email.com",
-              "age":23,
-              "gender":"male",
-              "teamid" : 2
+        getPlayerData().then(
+            (response) =>{
+                setPlayerData(response.data)
             }
-        ]
-        setPlayerData(data)
+        )
+    // const data = [
+    //         {
+    //           "playerid": 1,
+    //           "firstName": "Jenny Chan",
+    //           "lastName": "3 waterfoot road",
+    //           "emailId": "jenny.chan@email.com",
+    //           "age":23,
+    //           "gender":"male",
+    //           "teamid" : 2
+    //         }
+    //     ]
+        // setPlayerData(data)
     },[]);
 
 
@@ -47,8 +46,8 @@ const Players = ()=>{
                 {playerData.map((data)=>(
                     <tr>
                         <td>{data.playerid}</td>
-                        <td>{data.firstName}</td>
-                        <td>{data.lastName}</td>
+                        <td>{data.firstname}</td>
+                        <td>{data.lastname}</td>
                         <td>{data.emailId}</td>
                         <td>{data.age}</td>
                         <td>{data.gender}</td>
@@ -61,5 +60,4 @@ const Players = ()=>{
     );
 
 };
-
 export default Players;
