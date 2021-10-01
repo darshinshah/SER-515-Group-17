@@ -1,30 +1,29 @@
 import React, { useState, useEffect } from "react";
-import getPlayerData from '../Services/player.service'
-import '../Styles/Players.css'
+import PlayerService from '../Services/player.service'
+import './Players.css'
 
 const Players = ()=>{
 
     const [playerData, setPlayerData] = useState([]);
 
     useEffect(()=>{
-        getPlayerData().then(
-            (response) =>{
-                console.log(response);
-                setPlayerData(response.data)
-            }
-        )
-        // const data = [
-        //     {
-        //       "playerid": 1,
-        //       "firstName": "Jenny Chan",
-        //       "lastName": "3 waterfoot road",
-        //       "emailId": "jenny.chan@email.com",
-        //       "age":23,
-        //       "gender":"male",
-        //       "teamid" : 2
+        // PlayerService.getPlayerData().then(
+        //     (response) =>{
+        //         setPlayerData(response.data)
         //     }
-        // ]
-        // setPlayerData(data)
+        // )
+        const data = [
+            {
+              "playerid": 1,
+              "firstName": "Jenny Chan",
+              "lastName": "3 waterfoot road",
+              "emailId": "jenny.chan@email.com",
+              "age":23,
+              "gender":"male",
+              "teamid" : 2
+            }
+        ]
+        setPlayerData(data)
     },[]);
 
 
@@ -61,5 +60,4 @@ const Players = ()=>{
     );
 
 };
-
 export default Players;
