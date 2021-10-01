@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
+import './LoginBox.css';
+import history from './history';
 
 class LoginBox extends React.Component {
 
@@ -12,10 +14,15 @@ class LoginBox extends React.Component {
       };
       this.handleDropdownChange = this.handleDropdownChange.bind(this);
       this.handleChange = this.handleChange.bind(this);
+      this.routeChange = this.routeChange.bind(this);
     }
   
    
-
+    routeChange = (e) =>{
+        history.push('/admin');
+        window.location.reload();
+        
+    }
     handleDropdownChange=(e) =>{
       this.setState({ role: e.target.value });
     }
@@ -27,56 +34,59 @@ class LoginBox extends React.Component {
   
     submitLogin(e) {
         e.preventDefault();
+        this.routeChange();
 
-        const user = {email: this.state.email,
-                    password: this.state.password,
-                    role : this.state.role} 
+        // const user = {email: this.state.email,
+        //             password: this.state.password,
+        //             role : this.state.role} 
             
-        console.log(user);
+        // console.log(user);
 
-        axios({
-          method: "post",
-          url: "http://localhost:8080/api/savelogin",
-          data: user,
-          headers: { "Content-Type": "application/json" },
-        })
-          .then(function (response) {
-            //handle success
+        // axios({
+        //   method: "post",
+        //   url: "http://localhost:8080/api/savelogin",
+        //   data: user,
+        //   headers: { "Content-Type": "application/json" },
+        // })
+        //   .then(function (response) {
+        //     //handle success
             
-            console.log(response);
-          })
-          .catch(function (response) {
-            //handle error
-            console.log(response);
-          });
+        //     console.log(response);
+        //   })
+        //   .catch(function (response) {
+        //     //handle error
+        //     console.log(response);
+        //   });
         
         // axios.post(`http://localhost:8080/api/login`, {user})
         //     .then(res=>{
         //         console.log(res);
         //     })
-
-
+        // this.props.showPlayer = true;
+        
 
     }
   
     render() {
       return (
-        <div className="inner-container">
-          <div className="header">
+        <div className="login-card">
+          <div className="login-card__header">
             Login
           </div>
-          <div className="box">
-            <div>
-            <select id="dropdown" onChange={this.handleDropdownChange}>
-              <option value="Select Role">Select Role</option>
-              <option value="Player">Player</option>
-              <option value="Coach">Coach</option>
-              <option value="Referee">Referee</option>
-              <option value="Tournament Manager">Tournament Manager</option>
-            </select>
+          <div className="login-card__controls">
+            
+            <div className="login-card__control">
+                <label>Roles</label>
+                <select id="dropdown" onChange={this.handleDropdownChange}>
+                <option value="Select Role">Select Role</option>
+                <option value="Player">Player</option>
+                <option value="Coach">Coach</option>
+                <option value="Referee">Referee</option>
+                <option value="Tournament Manager">Tournament Manager</option>
+                </select>
             </div>
   
-            <div className="input-group">
+            <div className="login-card__control">
               <label htmlFor="username">Username</label>
               <input
                 type="text"
@@ -87,7 +97,7 @@ class LoginBox extends React.Component {
                 onChange = {this.handleChange} />
             </div>
   
-            <div className="input-group">
+            <div className="login-card__control">
               <label htmlFor="password">Password</label>
               <input
                 type="password"

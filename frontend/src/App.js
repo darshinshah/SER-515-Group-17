@@ -9,13 +9,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navigation from './Components/Navigation';
 import Home from './Components/Home';
 import Teams from './Components/Teams';
+import Admin from './Components/Admin';
 import Sponsors from './Components/Sponsors';
 // import NavBarComp from './Components/NavBarComp';
 function App() {
   
   return (
     <div className="App">
-
+      <title>Soccer Tournament</title>
       
       <BrowserRouter>
         <div className="homepage-navbar">
@@ -30,6 +31,7 @@ function App() {
              <Route path="/rules" component={Rules}/>
              <Route path="/sponsors" component={Sponsors}/> */}
              <Route path="/about" component={AboutUs}/>
+             <Route path="/admin" component={Admin}/>
              <Route path="/sponsors" component={Sponsors}/>
            </Switch>
         </div> 
