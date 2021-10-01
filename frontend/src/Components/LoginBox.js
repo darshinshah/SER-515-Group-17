@@ -10,7 +10,8 @@ class LoginBox extends React.Component {
       this.state = {
           email:'',
           password:'',
-          role :''
+          role :'',
+          message:''
       };
       this.handleDropdownChange = this.handleDropdownChange.bind(this);
       this.handleChange = this.handleChange.bind(this);
@@ -33,30 +34,40 @@ class LoginBox extends React.Component {
     }
   
     submitLogin(e) {
-        e.preventDefault();
-        this.routeChange();
+      e.preventDefault();
 
-        // const user = {email: this.state.email,
-        //             password: this.state.password,
-        //             role : this.state.role} 
+        const user = {email: this.state.email,
+                    password: this.state.password,
+                    role : this.state.role} 
             
-        // console.log(user);
+        console.log(user);
 
-        // axios({
-        //   method: "post",
-        //   url: "http://localhost:8080/api/savelogin",
-        //   data: user,
-        //   headers: { "Content-Type": "application/json" },
-        // })
-        //   .then(function (response) {
-        //     //handle success
+        axios({
+          method: "post",
+          url: "http://localhost:8080/api/savelogin",
+          data: user,
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response)=> {
+              if(response.data === "User is already present" && !(this.state.role ===  'Tournament Manager')){
+                this.setState({
+                  message : 'Please select appropriate role',
+                })
+              }else if(response.data === "User registered" ){
+                this.setState({
+                  message : 'Please select appropriate role',
+                })
+              } else if(response.data === "User is already present" && (this.state.role ===  'Tournament Manager')){
+                this.routeChange();
+              }
             
-        //     console.log(response);
-        //   })
-        //   .catch(function (response) {
-        //     //handle error
-        //     console.log(response);
-        //   });
+            
+            console.log(response);
+          })
+          .catch(function (response) {
+            //handle error
+            console.log(response);
+          });
         
         // axios.post(`http://localhost:8080/api/login`, {user})
         //     .then(res=>{
@@ -115,6 +126,9 @@ class LoginBox extends React.Component {
               onClick={this
               .submitLogin
               .bind(this)}>Login</button>
+          </div>
+          <div style={{color: "red"}}>
+            {this.state.message}
           </div>
         </div>
       );
