@@ -101,4 +101,5 @@ CREATE TABLE Referee(
 -- INSERT INTO ManagerType VALUES(80001,"TEAM MANAGER");
 -- INSERT INTO MANAGER VALUES(70001,"Palak","T","palak@asu.edu",23,"female",80001,90001);
 -- INSERT INTO TEAMS VALUES(2001,"ASUS","USA",70001);
--- INSERT INTO PLAYER VALUES(1001,"Darshin","Shah","darshin@asu.edu",23,"male",2001);
+-- INSERT INTO PLAYER (playerid,firstname,lastname,email_id,age,gender,teamid) VALUES(1001,"Darshin","Shah","darshin@asu.edu",23,"male",2001);
+-- INSERT INTO PLAYER (playerid,firstname,lastname,email_id,age,gender,teamid) VALUES(	1002,"Nimil","Shah","nimil@asu.edu",24,"male",2001);
