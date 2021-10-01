@@ -31,11 +31,8 @@ function App() {
              <Route path="/rules" component={Rules}/>
              <Route path="/sponsors" component={Sponsors}/> */}
              <Route path="/about" component={AboutUs}/>
-<<<<<<< HEAD
              <Route path="/admin" component={Admin}/>
-=======
              <Route path="/sponsors" component={Sponsors}/>
->>>>>>> main
            </Switch>
         </div> 
       </BrowserRouter>
