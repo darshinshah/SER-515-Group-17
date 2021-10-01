@@ -60,15 +60,15 @@ This is an example of how you can set up this project locally.
 
 1. Install Spring Tools for Eclipse (https://spring.io/tools)
 2. Install Maven Dependecy in Sts
-2. Install MySql (https://dev.mysql.com/downloads/)
+3. Install MySql (https://dev.mysql.com/downloads/). Setup Workbench using Application.Properties file
    ```sh
    git clone https://github.com/darshinshah/SER-515-Group-17.git
    ```
-3. Install NPM packages
+4. Install NPM packages
    ```sh
    npm install
    ```
-4. Deploy React App
+5. Deploy React App
    ```sh
    npm start
    ```
