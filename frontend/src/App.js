@@ -11,6 +11,7 @@ import Home from './Components/Home';
 import Teams from './Components/Teams';
 import Admin from './Components/Admin';
 import Sponsors from './Components/Sponsors';
+import News from './Components/News';
 // import NavBarComp from './Components/NavBarComp';
 function App() {
   
@@ -30,6 +31,7 @@ function App() {
              <Route path="/apply" component={Apply}/>
              <Route path="/rules" component={Rules}/>
              <Route path="/sponsors" component={Sponsors}/> */}
+             <Route path="/news" component={News} />
              <Route path="/about" component={AboutUs}/>
              <Route path="/admin" component={Admin}/>
              <Route path="/sponsors" component={Sponsors}/>
