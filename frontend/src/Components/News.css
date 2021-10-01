@@ -1,0 +1,26 @@
+.newspage{
+}
+.newspage__content{
+    padding: 40px;
+    height: 120rem;
+    background-color: white;
+    justify-content: space-evenly;
+    text-align: justify;
+}
+.newspage__footer{
+    height: 10rem;
+    background-color: 007cc7;
+    
+}
+
+.header{
+    font-size: 30px;
+    font-weight: bold;
+    color: darkolivegreen;
+}
+.newspage__text {
+    padding-top: 20px;
+}
+.newspage__text li {
+    padding-top: 10px;
+}
