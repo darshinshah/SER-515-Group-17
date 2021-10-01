@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PlayerService from '../Services/player.service'
+import getPlayerData from '../Services/player.service'
 import './Players.css'
 
 const Players = ()=>{
@@ -7,23 +7,23 @@ const Players = ()=>{
     const [playerData, setPlayerData] = useState([]);
 
     useEffect(()=>{
-        // PlayerService.getPlayerData().then(
-        //     (response) =>{
-        //         setPlayerData(response.data)
-        //     }
-        // )
-        const data = [
-            {
-              "playerid": 1,
-              "firstName": "Jenny Chan",
-              "lastName": "3 waterfoot road",
-              "emailId": "jenny.chan@email.com",
-              "age":23,
-              "gender":"male",
-              "teamid" : 2
+        getPlayerData().then(
+            (response) =>{
+                setPlayerData(response.data)
             }
-        ]
-        setPlayerData(data)
+        )
+    // const data = [
+    //         {
+    //           "playerid": 1,
+    //           "firstName": "Jenny Chan",
+    //           "lastName": "3 waterfoot road",
+    //           "emailId": "jenny.chan@email.com",
+    //           "age":23,
+    //           "gender":"male",
+    //           "teamid" : 2
+    //         }
+    //     ]
+        // setPlayerData(data)
     },[]);
 
 
