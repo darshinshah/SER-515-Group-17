@@ -2,11 +2,13 @@
 
 }
 
+
+
 .homepage__content{
     height: 120rem;
     background-color: aliceblue;
 }
 .homepage__footer{
     height: 20rem;
-    background-color: 007cc7;
+    background-color: #12232e;;
 }
