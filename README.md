@@ -62,7 +62,8 @@ This is an example of how you can set up this project locally.
 2. Install Maven Dependecy in Sts
 3. Install MySql (https://dev.mysql.com/downloads/). Setup Workbench using Application.Properties file
 4. Start mysql server from terminal using command - 
-    ``` mysql.server start
+    ```
+        mysql.server start
          mysql -u root -p
     ```
    ```sh
