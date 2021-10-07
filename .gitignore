@@ -1,6 +1,8 @@
 .metadata/
 frontend/package-lock.json
+backend/.springBeans
 frontend/package-lock.json
+frontend/node_modules/
 .metadata
 frontend/package-lock.json
 .DS_Store
