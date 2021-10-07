@@ -12,18 +12,6 @@ const Players = ()=>{
                 setPlayerData(response.data)
             }
         )
-    // const data = [
-    //         {
-    //           "playerid": 1,
-    //           "firstName": "Jenny Chan",
-    //           "lastName": "3 waterfoot road",
-    //           "emailId": "jenny.chan@email.com",
-    //           "age":23,
-    //           "gender":"male",
-    //           "teamid" : 2
-    //         }
-    //     ]
-        // setPlayerData(data)
     },[]);
 
 
@@ -44,7 +32,7 @@ const Players = ()=>{
             </thead>
             <tbody>
                 {playerData.map((data)=>(
-                    <tr>
+                    <tr key = {data.playerid}>
                         <td>{data.playerid}</td>
                         <td>{data.firstname}</td>
                         <td>{data.lastname}</td>

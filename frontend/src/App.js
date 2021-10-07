@@ -1,10 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import ReactDOM from 'react-dom';
-import React, { Component } from 'react';
+import React from 'react';
 import AboutUs from './Components/AboutUs';
-import Greet from './Components/Greet'
-import NavBarButton from './Components/NavBarButton';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navigation from './Components/Navigation';
 import Home from './Components/Home';

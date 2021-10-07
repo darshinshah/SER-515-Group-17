@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React  from 'react';
 import axios from 'axios';
 import './LoginBox.css';
 import history from './history';
@@ -40,7 +40,6 @@ class LoginBox extends React.Component {
                     password: this.state.password,
                     role : this.state.role} 
             
-        console.log(user);
 
         axios({
           method: "post",
@@ -62,18 +61,10 @@ class LoginBox extends React.Component {
               }
             
             
-            console.log(response);
           })
           .catch(function (response) {
             //handle error
-            console.log(response);
           });
-        
-        // axios.post(`http://localhost:8080/api/login`, {user})
-        //     .then(res=>{
-        //         console.log(res);
-        //     })
-        // this.props.showPlayer = true;
         
 
     }
