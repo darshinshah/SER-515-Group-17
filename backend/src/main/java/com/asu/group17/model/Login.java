@@ -20,7 +20,6 @@ public class Login {
 		return email;
 	}
 
-
 	private String password;
 	
 	private String role;
@@ -31,6 +30,13 @@ public class Login {
 
 
 	
+	@Override
+	public String toString() {
+		return "Login [id=" + id + ", email=" + email + ", password=" + password + ", role=" + role + "]";
+	}
+
+
+
 	public Login(String email, String password, String role) {
 		super();
 		this.email = email;

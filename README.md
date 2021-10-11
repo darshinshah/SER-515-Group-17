@@ -61,6 +61,11 @@ This is an example of how you can set up this project locally.
 1. Install Spring Tools for Eclipse (https://spring.io/tools)
 2. Install Maven Dependecy in Sts
 3. Install MySql (https://dev.mysql.com/downloads/). Setup Workbench using Application.Properties file
+4. Start mysql server from terminal using command - 
+    ```
+        mysql.server start
+         mysql -u root -p
+    ```
    ```sh
    git clone https://github.com/darshinshah/SER-515-Group-17.git
    ```
