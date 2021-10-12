@@ -20,9 +20,9 @@ const position = [{
     lng: -128.214
   } ]
 
-  const onLoad = marker => {
-    console.log('marker: ', marker)
-  }
+  // const onLoad = marker => {
+  //   console.log('marker: ', marker)
+  // }
   const clicked = (x)=> {
         console.log("clicked", x);
   }
