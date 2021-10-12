@@ -13,46 +13,47 @@ public class Field {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int fieldid;
+	private int fieldId;
 	
-	private String fieldname;
+	private String fieldName;
 	
 	private Double latitude;
 	
 	private Double longitude;
 
 	private String city;
+	
+	private String image;
 
 	
 	
 	public Field() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Field(String fieldname, Double latitude, Double longitude, String city) {
+	public Field(String fieldname, Double latitude, Double longitude, String city, String image) {
 		super();
-//		this.fieldid = fieldid;
-		this.fieldname = fieldname;
+		this.fieldName = fieldname;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.city = city;
+		this.image = image;
 	}
 
 	public int getFieldid() {
-		return fieldid;
+		return fieldId;
 	}
 
 	public void setFieldid(int fieldid) {
-		this.fieldid = fieldid;
+		this.fieldId = fieldid;
 	}
 
 	public String getFieldname() {
-		return fieldname;
+		return fieldName;
 	}
 
 	public void setFieldname(String fieldname) {
-		this.fieldname = fieldname;
+		this.fieldName = fieldname;
 	}
 
 	public Double getLatitude() {
@@ -78,6 +79,16 @@ public class Field {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
+	
 	
 	
 
