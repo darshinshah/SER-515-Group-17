@@ -8,6 +8,7 @@ import Teams from './Components/Teams';
 import Admin from './Components/Admin';
 import Sponsors from './Components/Sponsors';
 import News from './Components/News';
+import Maps from './Components/Maps'
 // import NavBarComp from './Components/NavBarComp';
 function App() {
   
@@ -22,12 +23,9 @@ function App() {
             <Switch>
              <Route path="/" component={Home} exact/>
              <Route path="/teams" component={Teams}/>
-             {/* <Route path="/schedules" component={Schedules}/>
-             <Route path="/pointstable" component={PointsTable}/>
-             <Route path="/apply" component={Apply}/>
-             <Route path="/rules" component={Rules}/>
-             <Route path="/sponsors" component={Sponsors}/> */}
+             <Route path="/sponsors" component={Sponsors}/>
              <Route path="/news" component={News} />
+             <Route path = "/maps" component = {Maps}/>
              <Route path="/about" component={AboutUs}/>
              <Route path="/admin" component={Admin}/>
              <Route path="/sponsors" component={Sponsors}/>
