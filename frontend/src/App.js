@@ -9,6 +9,7 @@ import Admin from './Components/Admin';
 import Sponsors from './Components/Sponsors';
 import News from './Components/News';
 import Forms from './Components/Forms';
+import Apply from './Components/Apply';
 // import NavBarComp from './Components/NavBarComp';
 function App() {
   
@@ -25,9 +26,10 @@ function App() {
              <Route path="/teams" component={Teams}/>
              {/* <Route path="/schedules" component={Schedules}/>
              <Route path="/pointstable" component={PointsTable}/>
+             
+             <Route path="/rules" component={Rules}/> */}
              <Route path="/apply" component={Apply}/>
-             <Route path="/rules" component={Rules}/>
-             <Route path="/sponsors" component={Sponsors}/> */}
+             <Route path="/sponsors" component={Sponsors}/>
              <Route path="/news" component={News} />
              <Route path="/about" component={AboutUs}/>
              <Route path="/admin" component={Admin}/>
