@@ -1,0 +1,52 @@
+.applypage{
+}
+.applypage__content{
+    padding: 40px;
+    height: 120rem;
+    background-color: white;
+    justify-content: space-evenly;
+    text-align: justify;
+}
+.applypage__footer{
+    height: 10rem;
+    background-color: 007cc7;
+    
+}
+
+.header{
+    font-size: 30px;
+    font-weight: bold;
+    color: darkolivegreen;
+}
+.applypage__form{
+    display: flex;
+    flex-direction: column;
+}
+.subheader_separator{
+    background-color: #12232e;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 2rem;
+}
+.subheader_main{
+    font-weight: bold;
+    font-size: large;
+}
+.applypage__form_row{
+    display: flex;
+    flex-direction: row;
+}
+.applypage__form label {
+    width: 30%;
+    text-align: left;
+}
+.applypage__form input, select {
+    width: 70%;
+}
+.applypage__text {
+    padding-top: 20px;
+}
+.applypage__text li {
+    padding-top: 10px;
+}

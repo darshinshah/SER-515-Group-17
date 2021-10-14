@@ -21,6 +21,7 @@ const Navigation = () => {
          <NavBarButton><NavLink to="/maps" className="navlink">Maps</NavLink></NavBarButton>
          <NavBarButton><NavLink to="/sponsors" className="navlink">Sponsors</NavLink></NavBarButton>
          <NavBarButton><NavLink to="/news" className="navlink">News</NavLink></NavBarButton>
+         <NavBarButton><NavLink to="/forms" className="navlink">Forms</NavLink></NavBarButton>
          <NavBarButton click={openAboutUs}><NavLink to="/about" className="navlink">About Us</NavLink></NavBarButton>
          
        </div>
