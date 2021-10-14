@@ -13,8 +13,9 @@ CREATE TABLE Referee(
         )ENGINE=INNODB auto_increment = 5000;
 
 
--- INSERT INTO TournamentDirector VALUES(90001,"NEEL","N","neel@asu.com",22,"male");
--- INSERT INTO ManagerType VALUES(80001,"TEAM MANAGER");
--- INSERT INTO MANAGER VALUES(70001,"Palak","T","palak@asu.edu",23,"female",80001,90001);
--- INSERT INTO TEAMS VALUES(2001,"ASUS","USA",70001);
--- INSERT INTO PLAYER VALUES(1001,"Darshin","Shah","darshin@asu.edu",23,"male",2001);
+
+
+ --INSERT INTO Referee VALUES(5001,"Craig","Smith","craigsmith@gmail.com",22,"male",6001,70002);
+ --INSERT INTO Referee VALUES(5002,"Sam","Khan","sam@gmail.com",22,"male",6002,70002);
+ --INSERT INTO Referee VALUES(5003,"Nina","Crow","nina@gmail.com",22,"female",6003,70002);
+
