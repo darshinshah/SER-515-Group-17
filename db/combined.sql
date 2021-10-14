@@ -97,6 +97,20 @@ CREATE TABLE Referee(
         )ENGINE=INNODB auto_increment = 5000;
 
 
+-- SELECT * FROM TournamentDirector;
+-- SELECT * FROM ManagerType;
+--  SELECT * FROM MANAGER; 
+-- SELECT * FROM Teams;
+--  SELECT * FROM COACH; 
+
+
+-- INSERT INTO TournamentDirector VALUES(90001,"NEEL","N","neel@asu.com",22,"male");
+-- INSERT INTO ManagerType VALUES(80001, "COACH_MANAGER"  );
+--  INSERT INTO MANAGER VALUES(70001, "jackie","chang", "jchang@asu.edu", 47,"male", 80001 , 90001);
+-- INSERT INTO Teams Values(2001, "A2 FOSC 13 RED", "US", 70001);
+--  INSERT INTO COACH VALUES(30001, "Frank", "Rijkaard", "Rijkaard@asu.edu",  56, "male", 2001,"US", "Senior", 70001 );
+
+
 -- INSERT INTO TournamentDirector VALUES(90001,"NEEL","N","neel@asu.com",22,"male");
 -- INSERT INTO ManagerType VALUES(80001,"TEAM MANAGER");
 -- INSERT INTO MANAGER VALUES(70001,"Palak","T","palak@asu.edu",23,"female",80001,90001);
