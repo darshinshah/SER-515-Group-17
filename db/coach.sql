@@ -13,3 +13,6 @@ CREATE TABLE Coach(
 		FOREIGN KEY (teamid) REFERENCES Teams(teamid),
 		PRIMARY KEY (coachid)
 )ENGINE=INNODB auto_increment = 3000;
+
+--  SELECT * FROM COACH; 
+--  INSERT INTO COACH VALUES(30001, "Frank", "Rijkaard", "Rijkaard@asu.edu",  56, "male", 2001,"US", "Senior", 70001 );
