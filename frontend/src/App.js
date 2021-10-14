@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navigation from './Components/Navigation';
 import Home from './Components/Home';
 import Teams from './Components/Teams';
+import Referees from './Components/Referees'
 import Admin from './Components/Admin';
 import Sponsors from './Components/Sponsors';
 import News from './Components/News';
@@ -41,6 +42,7 @@ function App() {
              <Route path="/about" component={AboutUs}/>
              <Route path="/admin" component={Admin}/>
              <Route path="/sponsors" component={Sponsors}/>
+             <Route path="/referees" component={Referees}/>
              <Route path="/forms" component={Forms}/>
            </Switch>
         </div> 
