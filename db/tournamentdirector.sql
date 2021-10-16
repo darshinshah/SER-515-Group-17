@@ -7,3 +7,5 @@ CREATE TABLE TournamentDirector (
     gender VARCHAR(23) NOT NULL,
     PRIMARY KEY (tdid)
 ) ENGINE=INNODB auto_increment = 90000;
+
+-- INSERT INTO TournamentDirector VALUES(90001,"NEEL","N","neel@asu.com",22,"male");
