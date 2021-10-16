@@ -69,11 +69,12 @@ This is an example of how you can set up this project locally.
    ```sh
    git clone https://github.com/darshinshah/SER-515-Group-17.git
    ```
-4. Install NPM packages
+5. Install NPM packages
    ```sh
    npm install
    ```
-5. Deploy React App
+6. Click and run the file inside Executable Folder : executable.jar
+7. Deploy React App
    ```sh
    npm start
    ```
