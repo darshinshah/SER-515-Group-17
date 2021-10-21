@@ -1,6 +1,7 @@
 import './Referees.css';
 import React from 'react';
 import axios from 'axios';
+import { Alert } from 'react-bootstrap';
 
 export class Referee extends React.Component{
     constructor(props){
@@ -58,6 +59,7 @@ export class Referee extends React.Component{
                 })
               }
             console.log(response); 
+            alert(response.data )
             
           })
           .catch(function (response) {
@@ -70,28 +72,36 @@ export class Referee extends React.Component{
 
     render(){
         return(
-            <div>
-                <h2>Referee Center for Soccer Tournament</h2>
+            <div >
+                <h2 className="refereedetail">Referee Center for Soccer Tournament</h2>
                 <form className="loginform">
-                    
+                    <div className="applypage__form_row">
                     <p>
-                        <label>  Name: <input type="text"
+                        <label>  Name <input type="text" placeholder="Enter your name"
                          name="name" value={this.state.employee.name} onChange={this.changeHandler}></input></label>
                     </p>
+                    </div>
+                    <div className="applypage__form_row">
                     <p>
-                        <label> Email: <input type="text"
+                        <label> Email <input type="text" placeholder="Enter your email"
                          name="emailId" value={this.state.employee.emailId} onChange={this.changeHandler}></input></label>
                     </p>
+                    </div>
+                    <div className="applypage__form_row">
                     <p>
-                        <label> Age: <input type="text"
+                        <label> Age<input type="number" placeholder="Enter your Age"
                          name="age" value={this.state.employee.age} onChange={this.changeHandler}></input></label>
                     </p>
+                    </div>
+                    <div className="applypage__form_row">
                     <p>
-                        <label> Gender: <input type="text"
+                        <label> Gender <input type="text" placeholder="Enter your gender"
                          name="gender" value={this.state.employee.gender} onChange={this.changeHandler}></input></label>
                     </p>
+                    </div>
+                   
                     <p>
-                        <label> Availability:
+                        <label> Availability
                         <select id="dropdown" name="availability" onChange={this.changeHandler}>
                             <option value="available">Select</option>
                             <option value="Yes">Yes</option>
@@ -99,10 +109,13 @@ export class Referee extends React.Component{
                         </select>
                         </label>
                     </p>
+                   
+                    <div className="applypage__form_row">
                     <p>
-                        <label> Years of Experience: <input type="text"
+                        <label> Experience <input type="number" placeholder="Enter exp."
                          name="experience" value={this.state.employee.experience} onChange={this.changeHandler}></input></label>
                     </p>
+                    </div>
                 </form>
                 <button onClick={this.onCreate.bind(this)}>submit</button>
             </div>
