@@ -20,7 +20,7 @@ class LoginBox extends React.Component {
   
    
     routeChange = (e) =>{
-        history.push('/admin');
+        history.push('/TournamentManagerPage');
         window.location.reload();
         
     }
@@ -40,31 +40,34 @@ class LoginBox extends React.Component {
                     password: this.state.password,
                     role : this.state.role} 
             
+        this.routeChange();
 
-        axios({
-          method: "post",
-          url: "http://localhost:8080/api/savelogin",
-          data: user,
-          headers: { "Content-Type": "application/json" },
-        })
-          .then((response)=> {
-              if(response.data === "User is already present" && !(this.state.role ===  'Tournament Manager')){
-                this.setState({
-                  message : 'Please select appropriate role',
-                })
-              }else if(response.data === "User registered" ){
-                this.setState({
-                  message : 'Please select appropriate role',
-                })
-              } else if(response.data === "User is already present" && (this.state.role ===  'Tournament Manager')){
-                this.routeChange();
-              }
+
+        //commented for testing
+        // axios({
+        //   method: "post",
+        //   url: "http://localhost:8080/api/savelogin",
+        //   data: user,
+        //   headers: { "Content-Type": "application/json" },
+        // })
+        //   .then((response)=> {
+        //       if(response.data === "User is already present" && !(this.state.role ===  'Tournament Manager')){
+        //         this.setState({
+        //           message : 'Please select appropriate role',
+        //         })
+        //       }else if(response.data === "User registered" ){
+        //         this.setState({
+        //           message : 'Please select appropriate role',
+        //         })
+        //       } else if(response.data === "User is already present" && (this.state.role ===  'Tournament Manager')){
+        //         this.routeChange();
+        //       }
             
             
-          })
-          .catch(function (response) {
-            //handle error
-          });
+        //   })
+        //   .catch(function (response) {
+        //     //handle error
+        //   });
         
 
     }
