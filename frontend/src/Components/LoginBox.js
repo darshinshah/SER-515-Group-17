@@ -43,27 +43,31 @@ class LoginBox extends React.Component {
 
         axios({
           method: "post",
-          url: "http://localhost:8080/api/savelogin",
+          url: "http://localhost:8080/v1/login",
           data: user,
           headers: { "Content-Type": "application/json" },
         })
           .then((response)=> {
               if(response.data === "User is already present" && !(this.state.role ===  'Tournament Manager')){
+                this.routeChange();
                 this.setState({
                   message : 'Please select appropriate role',
                 })
               }else if(response.data === "User registered" ){
+                this.routeChange();
                 this.setState({
                   message : 'Please select appropriate role',
                 })
-              } else if(response.data === "User is already present" && (this.state.role ===  'Tournament Manager')){
+              } else if(response.data === "User logged in" && (this.state.role ===  'Tournament Manager')){
                 this.routeChange();
+                alert(response.data)
               }
             
             
           })
           .catch(function (response) {
             //handle error
+            alert(response.data )
           });
         
 
