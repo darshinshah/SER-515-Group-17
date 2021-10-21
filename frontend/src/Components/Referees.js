@@ -117,7 +117,7 @@ export class Referee extends React.Component{
                     </p>
                     </div>
                 </form>
-                <button onClick={this.onCreate.bind(this)}>submit</button>
+                <button onClick={this.onCreate.bind(this)}  style={{width:"12rem"}}>submit</button>
             </div>
         )
     }
