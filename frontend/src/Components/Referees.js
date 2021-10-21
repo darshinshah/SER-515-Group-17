@@ -7,10 +7,12 @@ export class Referee extends React.Component{
         super(props);
         this.state={
             employee:{
-                id:'',
+               
                 name:'',
-                email:'',
-                yearsOfExp:'',
+                emailId:'',
+                age:'',
+                gender:'',
+                experience:'',
                 availability:''
             }
            
@@ -25,13 +27,45 @@ export class Referee extends React.Component{
         }});
     }
 
-    onCreate=()=>{
-        console.log(this.state.employee.id);
-        console.log(this.state.employee.name);
-        console.log(this.state.employee.email);
-        console.log(this.state.employee.yearsOfExp);
+    onCreate=(e)=>{
+         console.log(this.state.employee.name);
+        console.log(this.state.employee.emailId);
+        console.log(this.state.employee.age);
+        console.log(this.state.employee.gender);
+
+        console.log(this.state.employee.experience);
         console.log(this.state.employee.availability);
         
+        e.preventDefault();
+        const user=this.state.employee;
+
+            
+
+        axios({
+          method: "post",
+          url: "http://localhost:8080/v1/registerReferee",
+          data: user,
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response)=> {
+              if(response.data === "Referee is already registered!"){
+                this.setState({
+                  message : 'Referee is already registered!',
+                })
+              }else if(response.data === "User registered" ){
+                this.setState({
+                  message : 'Referee registered',
+                })
+              }
+            console.log(response); 
+            
+          })
+          .catch(function (response) {
+            //handle error
+          });
+        
+
+
     }
 
     render(){
@@ -39,17 +73,22 @@ export class Referee extends React.Component{
             <div>
                 <h2>Referee Center for Soccer Tournament</h2>
                 <form className="loginform">
-                    <p>
-                        <label> Id: </label> <input type="text"
-                         name="id" value={this.state.employee.id} onChange={this.changeHandler}></input>
-                    </p>
+                    
                     <p>
                         <label>  Name: <input type="text"
                          name="name" value={this.state.employee.name} onChange={this.changeHandler}></input></label>
                     </p>
                     <p>
                         <label> Email: <input type="text"
-                         name="email" value={this.state.employee.email} onChange={this.changeHandler}></input></label>
+                         name="emailId" value={this.state.employee.emailId} onChange={this.changeHandler}></input></label>
+                    </p>
+                    <p>
+                        <label> Age: <input type="text"
+                         name="age" value={this.state.employee.age} onChange={this.changeHandler}></input></label>
+                    </p>
+                    <p>
+                        <label> Gender: <input type="text"
+                         name="gender" value={this.state.employee.gender} onChange={this.changeHandler}></input></label>
                     </p>
                     <p>
                         <label> Availability:
@@ -62,10 +101,10 @@ export class Referee extends React.Component{
                     </p>
                     <p>
                         <label> Years of Experience: <input type="text"
-                         name="yearsOfExp" value={this.state.employee.yearsOfExp} onChange={this.changeHandler}></input></label>
+                         name="experience" value={this.state.employee.experience} onChange={this.changeHandler}></input></label>
                     </p>
                 </form>
-                <button onClick={this.onCreate}>submit</button>
+                <button onClick={this.onCreate.bind(this)}>submit</button>
             </div>
         )
     }
