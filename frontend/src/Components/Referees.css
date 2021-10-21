@@ -1,0 +1,27 @@
+.refereedetail { 
+    background-color: white;
+}
+.refereepage___content{
+    padding: 5px 10px;
+}
+.refereepage___content label {
+    margin: 10px 0;
+}
+
+.loginform{
+    padding: 10px;
+    flex-direction: column;
+    text-align: left;
+    max-width: 50%;
+    font-size: 12px;
+    
+
+}
+
+.applypage__form input, select {
+    width: 48%;
+}
+.applypage__form_row{
+    display: flex;
+    flex-direction: row;
+}
