@@ -1,6 +1,55 @@
 import './Apply.css';
+import axios from 'axios';
+import React, { useState } from "react";
 const Apply = () => {
 
+    //  const handleChange = (e) =>{
+    //     const {name,value} = e.target
+    //     this.setState({[name]:value})
+    // }
+    const [teamName, setTeamName] = useState("");
+    const [coachName, setCoachName] = useState("");
+    const [stateName, setStateName] = useState("");
+    const [clubName, setClubName] = useState("");
+    const [contact, setContact] = useState("");
+    const [address, setAddress] = useState("");
+
+    const submitForm = (e) =>{
+        e.preventDefault();
+
+        
+
+
+        alert(`Form for the team submitted ${teamName}`);
+
+        console.log(teamName);
+        // axios({
+        //     method: "post",
+        //     url: "http://localhost:8080/api/savelogin",
+        //     data: user,
+        //     headers: { "Content-Type": "application/json" },
+        // })
+        //     .then((response) => {
+        //         if (response.data === "User is already present" && !(this.state.role === 'Tournament Manager')) {
+        //             this.setState({
+        //                 message: 'Please select appropriate role',
+        //             })
+        //         } else if (response.data === "User registered") {
+        //             this.setState({
+        //                 message: 'Please select appropriate role',
+        //             })
+        //         } else if (response.data === "User is already present" && (this.state.role === 'Tournament Manager')) {
+        //             this.routeChange();
+        //         }
+
+
+        //     })
+        //     .catch(function (response) {
+        //         //handle error
+        //     });
+
+
+    }
     return (
         <div className="applypage">
             <div className="applypage__content">
@@ -47,7 +96,7 @@ const Apply = () => {
                             <label>
                                 Team Name
                             </label>
-                            <input type="text" name="team_name"></input>
+                            <input type="text" name="team_name" value={teamName} onChange={e => setTeamName(e.target.value)}></input>
                         </div>
                         <div className="applypage__form_row">
                             <label>
@@ -78,19 +127,19 @@ const Apply = () => {
                             <label>
                                 Coach Name
                             </label>
-                            <input type="text" name="coach_name"></input>
+                            <input type="text" name="coach_name" value={coachName} onChange={e => setCoachName(e.target.value)}></input>
                         </div>
                         <div className="applypage__form_row">
                             <label>
                                 Team State
                             </label>
-                            <input type="text" name="team_state_name"></input>
+                            <input type="text" name="team_state_name" value={stateName} onChange={e => setStateName(e.target.value)}></input>
                         </div>
                         <div className="applypage__form_row">
                             <label>
                                 Club Name
                             </label>
-                            <input type="text" name="club_name"></input>
+                            <input type="text" name="club_name" value={clubName} onChange={e => setClubName(e.target.value)}></input>
                         </div>
                         <div className="applypage__form_row">
                             <label>
@@ -119,19 +168,19 @@ const Apply = () => {
                             <label>
                                 Contact Name
                             </label>
-                            <input type="text" name="contact"></input>
+                            <input type="text" name="contact" value={contact} onChange={e => setContact(e.target.value)}></input>
                         </div>
                         <div className="applypage__form_row">
                             <label>
                                 Address
                             </label>
-                            <input type="text" name="address"></input>
+                            <input type="text" name="address" value={address} onChange={e => setAddress(e.target.value)}></input>
                         </div>
-                        <div className="applypage__form_row" style={{paddingTop:"5rem"}}>
+                        <div className="applypage__form_row" style={{ paddingTop: "5rem" }}>
 
-                            <input type="submit" value="Submit Form" style={{width:"12rem"}}/>   
+                            <input type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={submitForm}/>
                         </div>
-                        
+
 
                     </form>
                 </div>
