@@ -35,10 +35,10 @@ public class RefereeController {
 		while (it.hasNext()) {
 			Referee refereeDetail = it.next();
 			if (refereeDetail.getEmailId() != null && refereeDetail.getEmailId().equals(data.getEmailId()))
-				return "Referee is already already registered!";
+				return "Referee is already registered!";
 		}
 		this.refereeRepository.save(data);
-		return "User registered " + data.toString();
+		return "User registered ";
 	}
 	
 	
