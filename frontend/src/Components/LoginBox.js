@@ -20,9 +20,13 @@ class LoginBox extends React.Component {
   
    
     routeChange = (e) =>{
+      if(this.state.role=='Tournament Manager')
         history.push('/TournamentManagerPage');
-        window.location.reload();
+      
+      else if(this.state.role=='Coach')
+        history.push('/CoachPage');
         
+      window.location.reload();  
     }
     handleDropdownChange=(e) =>{
       this.setState({ role: e.target.value });

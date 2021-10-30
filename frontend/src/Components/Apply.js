@@ -129,18 +129,7 @@ const Apply = () => {
                             </label>
                             <input type="text" name="coach_name" value={coachName} onChange={e => setCoachName(e.target.value)}></input>
                         </div>
-                        <div className="applypage__form_row">
-                            <label>
-                                Team State
-                            </label>
-                            <input type="text" name="team_state_name" value={stateName} onChange={e => setStateName(e.target.value)}></input>
-                        </div>
-                        <div className="applypage__form_row">
-                            <label>
-                                Club Name
-                            </label>
-                            <input type="text" name="club_name" value={clubName} onChange={e => setClubName(e.target.value)}></input>
-                        </div>
+                       
                         <div className="applypage__form_row">
                             <label>
                                 Association
@@ -152,17 +141,7 @@ const Apply = () => {
 
                                 </option></select>
                         </div>
-                        <div className="applypage__form_row">
-                            <label>
-                                League
-                            </label>
-                            <select class="body" name="league" size="1">
-                                <option selected="" value=""></option>
-                                <option value=""></option>
-                                <option value="(LYSL) (KPL)">(LYSL) (KPL)  (KY)</option><option value="BPL">BPL  (OHS)</option><option value="bpysl">bpysl  (OHS)</option><option value="BPYSL - Elite 2">BPYSL - Elite 2  (OHS)</option><option value="BPYSL Elite 1">BPYSL Elite 1  (OHS)</option><option value="BPYSL Select Black">BPYSL Select Black  (OHS)</option><option value="BPYSL- Select Red">BPYSL- Select Red  (OHS)</option><option value="Buckeye Premier 1">Buckeye Premier 1  (OHS)</option><option value="Buckeye Premier Youth Soccer League">Buckeye Premier Youth Soccer League  (OHS)</option><option value="Buckeye State">Buckeye State  (OHS)</option><option value="Buckeye State and OSSL">Buckeye State and OSSL  (OHS)</option><option value="Cardinal Premier League">Cardinal Premier League  (OHS)</option><option value="CASA">CASA  (OHN)</option><option value="Central Ohio Premier League">Central Ohio Premier League  (OHS)</option><option value="COPL Columbus Ohio Premier Leauge">COPL Columbus Ohio Premier Leauge  (OHS)</option><option value="ECNL">ECNL  (USCLUB)</option><option value="ECNL REGIONAL LEAGUE">ECNL REGIONAL LEAGUE  (USCLUB)</option><option value="GLA/NPL">GLA/NPL  (USCLUB)</option><option value="GSCL - Cardinal Premier">GSCL - Cardinal Premier  (OHS)</option><option value="GVSA">GVSA  (MI)</option><option value="KSSL">KSSL  (KY)</option><option value="MSYSA">MSYSA  (OHS)</option><option value="mvysa">mvysa  (OHS)</option><option value="mvysa (OHS)">mvysa (OHS)  (OHS)</option><option value="No Leauge">No Leauge  (WV)</option><option value="NPL">NPL  (OHS)</option><option value="NWOYSL">NWOYSL  (OHS)</option><option value="OCL">OCL  (USCLUB)</option><option value="Ohio Soccer Developmental League- Columbus">Ohio Soccer Developmental League- Columbus  (OHS)</option><option value="OSSL also">OSSL also  (OHS)</option><option value="Red">Red  (OHS)</option><option value="Tournament Only Team">Tournament Only Team  (OHS)</option>
-                                <option value="NotInMenu">Not on menu -- Entered Below</option>
-                            </select>
-                        </div>
+                        
                         <div className="subheader_separator subheader_main"> Contact Information</div>
                         <div className="applypage__form_row">
                             <label>
@@ -172,7 +151,13 @@ const Apply = () => {
                         </div>
                         <div className="applypage__form_row">
                             <label>
-                                Address
+                                Phone Number
+                            </label>
+                            <input type="text" name="address" value={address} onChange={e => setAddress(e.target.value)}></input>
+                        </div>
+                        <div className="applypage__form_row">
+                            <label>
+                                Email
                             </label>
                             <input type="text" name="address" value={address} onChange={e => setAddress(e.target.value)}></input>
                         </div>
