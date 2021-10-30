@@ -18,7 +18,7 @@ public class TeamsController {
 	@Autowired
 	public TeamsRepository teamsRepository;
 	
-	@GetMapping(value = "/allteams")
+	@GetMapping(value = "/allTeams")
 	public List <Teams>getAllTeams()
 	{
 		return teamsRepository.findAll();
