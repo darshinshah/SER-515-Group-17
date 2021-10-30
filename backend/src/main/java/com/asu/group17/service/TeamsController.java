@@ -3,6 +3,7 @@ package com.asu.group17.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,12 +20,14 @@ public class TeamsController {
 	@Autowired
 	public TeamsRepository teamsRepository;
 	
+	@CrossOrigin(origins = "*")
 	@GetMapping(value = "/allTeams")
 	public List <Teams>getAllTeams()
 	{
 		return teamsRepository.findAll();
 	}
 	
+	@CrossOrigin(origins = "*")
 	@PostMapping("/saveTeam")
 	public String saveTeam(@RequestBody Teams data) {
 		this.teamsRepository.save(data);
