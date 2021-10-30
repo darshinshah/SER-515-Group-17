@@ -100,27 +100,12 @@ const Apply = () => {
                         </div>
                         <div className="applypage__form_row">
                             <label>
-                                League Gender/Age
+                                League Gender
                             </label>
                             <select class="body" name="sex" size="1" style={{ width: "35%" }}>
                                 <option selected="" value=""></option>
                                 <option value="Boys">Boys</option>
                                 <option value="Girls">Girls</option>
-                            </select>
-                            <select class="body" name="age_group" size="1" style={{ width: "35%" }}>
-                                <option value=""></option>
-                                <option value="08">U08</option>
-                                <option value="09">U09</option>
-                                <option value="10">U10</option>
-                                <option value="11">U11</option>
-                                <option value="12">U12</option>
-                                <option value="13">U13</option>
-                                <option value="14">U14</option>
-                                <option value="15">U15</option>
-                                <option value="16">U16</option>
-                                <option value="17">U17</option>
-                                <option value="18">U18</option>
-                                <option value="19">U19</option>
                             </select>
                         </div>
                         <div className="applypage__form_row">
