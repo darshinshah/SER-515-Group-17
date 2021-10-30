@@ -1,7 +1,6 @@
 
 package com.asu.group17.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,64 +12,119 @@ import javax.persistence.Table;
 
 public class Teams {
 	
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int teamid;
+	int teamId;
 	
-	@Column(name = "name")
-	String name;
+	String applicationGroup;
 	
-	@Column(name = "country")
-	String country;
+	String teamName;
 	
-	@Column(name = "mgid")
-	int mgid;
+	String teamGender;
 	
-	public int getTeamid() {
-		return teamid;
-	}
-	public void setTeamid(int teamid) {
-		this.teamid = teamid;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	String coachName;
 	
-	public String getCountry() {
-		return country;
-	}
-	public void setCountry(String country) {
-		this.country = country;
-	}
+	String association;
 	
-	public int getMgid() {
-		return mgid;
-	}
-	public void setMgid(int mgid) {
-		this.mgid = mgid;
-	}
+	String contactName;
 	
-	@Override
-	public String toString() {
-		return "Teams [teamid=" + teamid + ", name=" + name + ", country=" + country + ", mgid="
-				+ mgid+ "]";
+	String phoneNumber;
+	
+	String email;
+
+	public Teams(int teamId, String applicationGroup, String teamName, String teamGender, String coachName,
+			String association, String contactName, String phoneNumber, String email) {
+		super();
+		this.teamId = teamId;
+		this.applicationGroup = applicationGroup;
+		this.teamName = teamName;
+		this.teamGender = teamGender;
+		this.coachName = coachName;
+		this.association = association;
+		this.contactName = contactName;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
 	}
+
 	public Teams() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Teams(int teamid, String name, String country) {
-		super();
-		this.teamid = teamid;
-		this.name = name;
-		this.country = country;
-		this.mgid = mgid;
+
+	public int getTeamId() {
+		return teamId;
 	}
+
+	public void setTeamId(int teamId) {
+		this.teamId = teamId;
+	}
+
+	public String getApplicationGroup() {
+		return applicationGroup;
+	}
+
+	public void setApplicationGroup(String applicationGroup) {
+		this.applicationGroup = applicationGroup;
+	}
+
+	public String getTeamName() {
+		return teamName;
+	}
+
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
+	}
+
+	public String getTeamGender() {
+		return teamGender;
+	}
+
+	public void setTeamGender(String teamGender) {
+		this.teamGender = teamGender;
+	}
+
+	public String getCoachName() {
+		return coachName;
+	}
+
+	public void setCoachName(String coachName) {
+		this.coachName = coachName;
+	}
+
+	public String getAssociation() {
+		return association;
+	}
+
+	public void setAssociation(String association) {
+		this.association = association;
+	}
+
+	public String getContactName() {
+		return contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
+	
 	
 	
 
