@@ -14,6 +14,7 @@ import Forms from './Components/Forms';
 import Apply from './Components/Apply';
 
 import Maps from './Components/Maps'
+import TournamentManagerPage from './Components/TournamentManagerPage';
 
 // import NavBarComp from './Components/NavBarComp';
 function App() {
@@ -41,6 +42,7 @@ function App() {
              <Route path = "/maps" component = {Maps}/>
              <Route path="/about" component={AboutUs}/>
              <Route path="/admin" component={Admin}/>
+             <Route path="/tournamentManagerPage" component={TournamentManagerPage}/>
              <Route path="/sponsors" component={Sponsors}/>
              <Route path="/referees" component={Referee}/>
              <Route path="/forms" component={Forms}/>

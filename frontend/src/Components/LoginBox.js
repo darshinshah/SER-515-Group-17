@@ -20,9 +20,13 @@ class LoginBox extends React.Component {
   
    
     routeChange = (e) =>{
-        history.push('/admin');
-        window.location.reload();
+      if(this.state.role=='Tournament Manager')
+        history.push('/TournamentManagerPage');
+      
+      else if(this.state.role=='Coach')
+        history.push('/CoachPage');
         
+      window.location.reload();  
     }
     handleDropdownChange=(e) =>{
       this.setState({ role: e.target.value });
@@ -40,6 +44,7 @@ class LoginBox extends React.Component {
                     password: this.state.password,
                     role : this.state.role} 
             
+        this.routeChange();
 
         axios({
           method: "post",

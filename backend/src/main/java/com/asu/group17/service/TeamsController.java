@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.asu.group17.model.Referee;
 import com.asu.group17.model.Teams;
 import com.asu.group17.repository.TeamsRepository;
 
@@ -18,12 +19,17 @@ public class TeamsController {
 	@Autowired
 	public TeamsRepository teamsRepository;
 	
-	@GetMapping(value = "/allteams")
+	@GetMapping(value = "/allTeams")
 	public List <Teams>getAllTeams()
 	{
 		return teamsRepository.findAll();
 	}
 	
+	@PostMapping("/saveTeam")
+	public String saveTeam(@RequestBody Teams data) {
+		this.teamsRepository.save(data);
+		return "Team Registered";
+	}
 	
 
 }

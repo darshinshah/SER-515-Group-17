@@ -1,0 +1,13 @@
+.coachpage{
+
+}
+
+.coachpage__content{
+    height: 120rem;
+    background-color: aliceblue;
+    color: #12232e;
+}
+.coachpage__footer{
+    height: 20rem;
+    background-color: #12232e;
+}

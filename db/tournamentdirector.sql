@@ -8,4 +8,4 @@ CREATE TABLE TournamentDirector (
     PRIMARY KEY (tdid)
 ) ENGINE=INNODB auto_increment = 90000;
 
--- INSERT INTO TournamentDirector VALUES(90001,"NEEL","N","neel@asu.com",22,"male");
+-- INSERT INTO TournamentDirector VALUES(90001,"admin","admin","admin@asu.com",22,"male");
