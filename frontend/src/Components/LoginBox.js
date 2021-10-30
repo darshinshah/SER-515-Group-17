@@ -46,32 +46,34 @@ class LoginBox extends React.Component {
             
         this.routeChange();
 
-
-        //commented for testing
-        // axios({
-        //   method: "post",
-        //   url: "http://localhost:8080/api/savelogin",
-        //   data: user,
-        //   headers: { "Content-Type": "application/json" },
-        // })
-        //   .then((response)=> {
-        //       if(response.data === "User is already present" && !(this.state.role ===  'Tournament Manager')){
-        //         this.setState({
-        //           message : 'Please select appropriate role',
-        //         })
-        //       }else if(response.data === "User registered" ){
-        //         this.setState({
-        //           message : 'Please select appropriate role',
-        //         })
-        //       } else if(response.data === "User is already present" && (this.state.role ===  'Tournament Manager')){
-        //         this.routeChange();
-        //       }
+        axios({
+          method: "post",
+          url: "http://localhost:8080/v1/login",
+          data: user,
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response)=> {
+              if(response.data === "User is already present" && !(this.state.role ===  'Tournament Manager')){
+                this.routeChange();
+                this.setState({
+                  message : 'Please select appropriate role',
+                })
+              }else if(response.data === "User registered" ){
+                this.routeChange();
+                this.setState({
+                  message : 'Please select appropriate role',
+                })
+              } else if(response.data === "User logged in" && (this.state.role ===  'Tournament Manager')){
+                this.routeChange();
+                alert(response.data)
+              }
             
             
-        //   })
-        //   .catch(function (response) {
-        //     //handle error
-        //   });
+          })
+          .catch(function (response) {
+            //handle error
+            alert(response.data )
+          });
         
 
     }
