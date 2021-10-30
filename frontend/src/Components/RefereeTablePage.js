@@ -11,7 +11,7 @@ const RefereeTablePage = () => {
     // const [experience, getExperience] = useState(0);
     // const [availability, getAvailability] = useState("");
     useEffect(() => {
-        axios.get("http://localhost:8080/getReferees", { "Content-Type": "application/json" }).then(
+        axios.get("http://localhost:8080/v1/getReferees", { "Content-Type": "application/json" }).then(
             (response) => {
                 setRefereeData(response.data);
             }
@@ -36,6 +36,7 @@ const RefereeTablePage = () => {
                         <tbody>
                             {refereeData.map((data) => (
                                 <tr key={data.refereeId}>
+                                    <td>{data.refereeId}</td>
                                     <td>{data.name}</td>
                                     <td>{data.emailId}</td>
                                     <td>{data.age}</td>
