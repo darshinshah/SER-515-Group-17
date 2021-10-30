@@ -15,7 +15,7 @@ CREATE TABLE Referee(
 
 
 
- --INSERT INTO Referee VALUES(5001,"Craig","Smith","craigsmith@gmail.com",22,"male",6001,70002);
- --INSERT INTO Referee VALUES(5002,"Sam","Khan","sam@gmail.com",22,"male",6002,70002);
- --INSERT INTO Referee VALUES(5003,"Nina","Crow","nina@gmail.com",22,"female",6003,70002);
+--  INSERT INTO Referee VALUES(5001,"Craig","Smith","craigsmith@gmail.com",22,"male",6001,70002);
+--  INSERT INTO Referee VALUES(5002,"Sam","Khan","sam@gmail.com",22,"male",6002,70002);
+--  INSERT INTO Referee VALUES(5003,"Nina","Crow","nina@gmail.com",22,"female",6003,70002);
 
