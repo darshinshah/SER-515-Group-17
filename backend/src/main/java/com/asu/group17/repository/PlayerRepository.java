@@ -11,4 +11,7 @@ import com.asu.group17.model.Player;
 public interface PlayerRepository  extends JpaRepository<Player, Integer>{
 	
 	List<Player> findByteamid(int id);
+	List<Player> findByfirstname(String fname);
+	List<Player> findBylastname(String lname);
+	
 }
