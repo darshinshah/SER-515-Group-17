@@ -1,9 +1,12 @@
 package com.asu.group17.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +27,8 @@ public class PlayerController {
 		return playerRepository.findAll();
 	}
 	
-	
-
+    @GetMapping("/getplayerbyteamid/{id}")
+    public List<Player> findUserById(@PathVariable(value = "id") int id) {
+       return playerRepository.findByteamid(id);
+    }
 }

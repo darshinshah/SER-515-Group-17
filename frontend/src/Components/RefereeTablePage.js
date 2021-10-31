@@ -4,12 +4,7 @@ import axios from 'axios';
 const RefereeTablePage = () => {
 
     const [refereeData, setRefereeData] = useState([]);
-    // const [name, getName] = useState("");
-    // const [email, getEmail] = useState("");
-    // const [age, getAge] = useState(0);
-    // const [gender, getGender] = useState("");
-    // const [experience, getExperience] = useState(0);
-    // const [availability, getAvailability] = useState("");
+
     useEffect(() => {
         axios.get("http://localhost:8080/v1/getReferees", { "Content-Type": "application/json" }).then(
             (response) => {
