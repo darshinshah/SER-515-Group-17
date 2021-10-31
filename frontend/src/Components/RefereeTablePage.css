@@ -1,0 +1,14 @@
+.refereetablepage {
+    
+}
+
+
+.refereetablepage__content{
+    height: 120rem;
+    background-color: aliceblue;
+}
+
+.refereetablepage__footer{
+    height: 20rem;
+    background-color: #12232e;
+}

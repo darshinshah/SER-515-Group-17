@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import getPlayerData from '../Services/player.service'
-import './Players.css'
-
-const Players = () => {
+import './TeamPlayers.css'
+import axios from 'axios';
+const TeamPlayers = () => {
 
     const [playerData, setPlayerData] = useState([]);
 
     useEffect(() => {
-        getPlayerData().then(
+        axios.get("http://localhost:8080/v1/", { "Content-Type": "application/json" }).then(
             (response) => {
-                setPlayerData(response.data)
+                setPlayerData(response.data);
             }
         )
     }, []);
@@ -48,4 +47,4 @@ const Players = () => {
     );
 
 };
-export default Players;
+export default TeamPlayers;
