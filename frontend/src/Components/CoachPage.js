@@ -6,11 +6,12 @@ const CoachPage = () => {
     const [teamData, setTeamData] = useState([]);
 
     useEffect(() => {
-        // axios.get("http://localhost:8080/v1/", { "Content-Type": "application/json" }).then(
-        //     (response) => {
-        //         setRefereeData(response.data);
-        //     }
-        // )
+        axios.get("http://localhost:8082/v1/getCoach", { "Content-Type": "application/json" }).then(
+            (response) => {
+                console.log(response);
+                setTeamData(response.data);
+            }
+        )
     }, []);
 
     const openPlayers = (e) => {
@@ -23,36 +24,36 @@ const CoachPage = () => {
                 <div className="subheader_separator subheader_main"> Team Information</div>
 
                     <div className="applypage__form_row">
-                        <label>
-                            Application Group:
-                        </label>
+                        <b>
+                            Application Group  :  
+                        </b>
                         <label>{teamData.applicationGroup}</label>
 
                     </div>
 
                     <div className="applypage__form_row">
-                        <label>
-                            Team Name:
-                        </label>
+                        <b>
+                            Team Name  :
+                        </b>
                         <label>{teamData.teamName}</label>                        
                     </div>
                     <div className="applypage__form_row">
-                        <label>
-                            League Gender:
-                        </label>
+                        <b>
+                            League Gender  :
+                        </b>
                         <label>{teamData.teamGender}</label>
                     </div>
                     <div className="applypage__form_row">
-                        <label>
-                            Coach Name:
-                        </label>
+                        <b>
+                            Coach Name  :
+                        </b>
                         <label>{teamData.coachName}</label>
                     </div>
 
                     <div className="applypage__form_row">
-                        <label>
-                            Association:
-                        </label>
+                        <b>
+                            Association  :
+                        </b>
                         <label>{teamData.association}</label>
                     </div>
                 {/* <button style="padding">Display list of players</button> */}

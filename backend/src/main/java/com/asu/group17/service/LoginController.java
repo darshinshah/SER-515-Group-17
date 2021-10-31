@@ -1,16 +1,23 @@
 package com.asu.group17.service;
 
 import java.util.Iterator;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.asu.group17.model.Login;
+import com.asu.group17.model.Player;
+import com.asu.group17.model.Teams;
 import com.asu.group17.repository.UserRepository;
+import com.asu.group17.repository.TeamsRepository;
+
 
 @RestController
 @RequestMapping("/v1")
@@ -18,6 +25,10 @@ public class LoginController {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private TeamsRepository teamsRepository;
+	
 
 	@CrossOrigin(origins = "*")
 	@PostMapping("/signup")
@@ -34,7 +45,7 @@ public class LoginController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@PostMapping("/login")
+	@PostMapping("/Tournament_Manager")
 	public String getUser(@RequestBody Login data) {
 		Iterable<Login> userlist = userRepository.findAll();
 
@@ -45,8 +56,40 @@ public class LoginController {
 				return "User logged in";
 		}
 
-		return "User not regsitered";
+		return "User not registered";
 
 	}
+	public Teams data1;
+	
+	@CrossOrigin(origins = "*")
+	@PostMapping("/Coach")
+	public Teams getNewUser(@RequestBody Login data) {
+		Iterable<Teams> teamsList = teamsRepository.findAll();
+
+		Iterator<Teams> it = teamsList.iterator();
+		while (it.hasNext()) {
+			Teams detail = it.next();
+			if (detail.getEmail().equals(data.getEmail())) {
+				data1 = detail;
+				return detail;
+			}		
+		}
+		
+		Teams t = new Teams();
+		return t;
+	}
+	
+	
+	@CrossOrigin(origins = "*")
+	@GetMapping("/getCoach")
+    public Teams getTeam() {
+       return data1;
+    }
+	
+	
+	
+	 
+	
+	
 
 }
