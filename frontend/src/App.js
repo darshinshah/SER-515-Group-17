@@ -16,6 +16,7 @@ import Apply from './Components/Apply';
 import Maps from './Components/Maps'
 import TournamentManagerPage from './Components/TournamentManagerPage';
 import RefereeTablePage from './Components/RefereeTablePage';
+import Registration from './Components/Registration';
 import CoachPage from './Components/CoachPage';
 import TeamPlayers from './Components/TeamPlayers';
 
@@ -50,6 +51,7 @@ function App() {
              <Route path="/referees" component={Referee}/>
              <Route path="/forms" component={Forms}/>
              <Route path="/refereeTablePage" component={RefereeTablePage}/>
+             <Route path = "/registration" component = {Registration}/>
              <Route path="/coachPage" component={CoachPage}/>
              <Route path="/teamPlayers" component={TeamPlayers}/>
            </Switch>

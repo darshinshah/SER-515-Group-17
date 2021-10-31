@@ -41,7 +41,7 @@
     width: 20rem;
     max-width: 100%;
   }
-  .login-card select {
+  .login-card__control select {
     font: inherit;
     padding: 0.5rem;
     border-radius: 6px;

@@ -27,10 +27,10 @@ public class LoginController {
 		while (it.hasNext()) {
 			Login logindetail = it.next();
 			if (logindetail.getEmail() != null && logindetail.getEmail().equals(data.getEmail()))
-				return "User is already already registered! Please try sign in!";
+				return "User is already registered! Please try sign in!";
 		}
 		this.userRepository.save(data);
-		return "User registered " + data.toString();
+		return "User registered";
 	}
 
 	@CrossOrigin(origins = "*")

@@ -3,92 +3,61 @@ import axios from 'axios';
 import './LoginBox.css';
 import history from './history';
 
-class LoginBox extends React.Component {
 
+class Registration extends React.Component{
     constructor(props) {
-      super(props);
-      this.state = {
-          email:'',
-          password:'',
-          role :'',
-          message:''
-      };
+        super(props);
+        this.state = {
+            email:'',
+            password:'',
+            role :'',
+        };
       this.handleDropdownChange = this.handleDropdownChange.bind(this);
       this.handleChange = this.handleChange.bind(this);
-      this.routeChange = this.routeChange.bind(this);
     }
-  
-   
-    routeChange = (e) =>{
-      if(this.state.role==='Tournament Manager')
-        history.push('/TournamentManagerPage');
-      
-      else if(this.state.role==='Coach')
-        history.push('/CoachPage');
-        
-      window.location.reload();  
-    }
+
     handleDropdownChange=(e) =>{
-      this.setState({ role: e.target.value });
+        this.setState({ role: e.target.value });
     }
 
     handleChange = (e) =>{
         const {name,value} = e.target
         this.setState({[name]:value})
     }
-
-    submitRegister(e){
-      e.preventDefault();
-      history.push('/Registration');
-      window.location.reload();
-    }
-  
-    submitLogin(e) {
-      e.preventDefault();
+    submitRegister = (e)=>{
+        e.preventDefault();
 
         const user = {email: this.state.email,
                     password: this.state.password,
                     role : this.state.role} 
             
-        this.routeChange();
-
         axios({
           method: "post",
-          url: "http://localhost:8080/v1/login",
+          url: "http://localhost:8082/v1/signup",
           data: user,
           headers: { "Content-Type": "application/json" },
         })
           .then((response)=> {
-              if(response.data === "User is already present" && !(this.state.role ===  'Tournament Manager')){
-                this.routeChange();
-                this.setState({
-                  message : 'Please select appropriate role',
-                })
-              }else if(response.data === "User registered" ){
-                this.routeChange();
-                this.setState({
-                  message : 'Please select appropriate role',
-                })
-              } else if(response.data === "User logged in" && (this.state.role ===  'Tournament Manager')){
-                this.routeChange();
-                // alert(response.data)
+              if(response.data === "User registered"){
+                alert(response.data)
+                history.push('/');
+                window.location.reload();
+
               }
-            
             
           })
           .catch(function (response) {
             //handle error
-            // alert(response.data )
+            alert(response.data )
           });
         
 
     }
-  
     render() {
-      return (
+    return(
         <div className="login-card">
           <div className="login-card__header">
-            Login
+            Registration
           </div>
           <div className="login-card__controls">
             
@@ -96,10 +65,8 @@ class LoginBox extends React.Component {
                 <label>Roles</label>
                 <select id="dropdown" onChange={this.handleDropdownChange}>
                 <option value="Select Role">Select Role</option>
-                {/* <option value="Player">Player</option> */}
+                <option value="Player">Player</option>
                 <option value="Coach">Coach</option>
-                {/* <option value="Referee">Referee</option> */}
-                <option value="Tournament Manager">Tournament Manager</option>
                 </select>
             </div>
   
@@ -125,13 +92,6 @@ class LoginBox extends React.Component {
                 onChange = {this.handleChange}
                 />
             </div>
-  
-            <button
-              type="button"
-              className="login-btn"
-              onClick={this
-              .submitLogin
-              .bind(this)}>Login</button>
 
             <button
               type="button"
@@ -139,13 +99,11 @@ class LoginBox extends React.Component {
               onClick={this.submitRegister
               .bind(this)}>Register</button>
           </div>
-          <div style={{color: "red"}}>
-            {this.state.message}
-          </div>
         </div>
-      );
+    )
     }
-  
-  }
 
-  export default LoginBox;
+}
+
+
+export default Registration;
