@@ -21,7 +21,7 @@ class LoginBox extends React.Component {
   
    
     routeChange = (e) =>{
-      if(this.state.role==='Tournament Manager')
+      if(this.state.role==='Tournament_Manager')
         history.push('/TournamentManagerPage');
       
       else if(this.state.role==='Coach')
@@ -37,7 +37,7 @@ class LoginBox extends React.Component {
         const {name,value} = e.target
         this.setState({[name]:value})
 
-        if(name == 'role'){
+        if(name === 'role'){
           this.setState({API : value})
         }
     }
@@ -56,8 +56,8 @@ class LoginBox extends React.Component {
                     role : this.state.role} 
             
                     console.log(this.state.role);
-        this.routeChange();
-        console.log(this.state.API);
+        // this.routeChange();
+        // console.log(this.state.API);
         axios({
           method: "post",
           url: "http://localhost:8082/v1/" + this.state.role,
@@ -70,17 +70,20 @@ class LoginBox extends React.Component {
               //   this.setState({
               //     message : 'Please select appropriate role',
               //   })
-              // }else if(response.data === "User registered" ){
-              //   this.routeChange();
-              //   this.setState({
-              //     message : 'Please select appropriate role',
-              //   })
-              // } else if(response.data === "User logged in" && (this.state.role ===  'Tournament Manager')){
-              //   this.routeChange();
-              //   // alert(response.data)
-              // }else{
-              //   console.log(response);
               // }
+              // else 
+              if(response.data === "User not registered" ){
+                // this.routeChange();
+                this.setState({
+                  message : 'Please select appropriate credentials',
+                })
+              } else if(response.data === "User logged in" && (this.state.role ===  'Tournament_Manager')){
+                this.routeChange();
+                // alert(response.data)
+              }else{
+                console.log(response);
+                this.routeChange();
+              }
               console.log(response.data);
             
             
@@ -108,7 +111,7 @@ class LoginBox extends React.Component {
                 {/* <option value="Player">Player</option> */}
                 <option value="Coach">Coach</option>
                 {/* <option value="Referee">Referee</option> */}
-                <option value="Tournament Manager">Tournament_Manager</option>
+                <option value="Tournament_Manager">Tournament_Manager</option>
                 </select>
             </div>
   

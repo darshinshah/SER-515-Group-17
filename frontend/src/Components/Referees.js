@@ -14,7 +14,7 @@ export class Referee extends React.Component{
                 age:'',
                 gender:'',
                 experience:'',
-                availability:''
+                availability:'',
             }
            
         }
@@ -58,8 +58,8 @@ export class Referee extends React.Component{
                   message : 'Referee registered',
                 })
               }
-            console.log(response); 
-            alert(response.data )
+            // console.log(response); 
+            Alert(response.data);
             
           })
           .catch(function (response) {

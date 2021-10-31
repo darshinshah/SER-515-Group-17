@@ -60,6 +60,8 @@ public class LoginController {
 
 	}
 	public Teams data1;
+	public 	boolean flag = false;
+
 	
 	@CrossOrigin(origins = "*")
 	@PostMapping("/Coach")
@@ -71,9 +73,11 @@ public class LoginController {
 			Teams detail = it.next();
 			if (detail.getEmail().equals(data.getEmail())) {
 				data1 = detail;
+				flag = true;
 				return detail;
 			}		
 		}
+		flag = false;
 		
 		Teams t = new Teams();
 		return t;
@@ -83,7 +87,12 @@ public class LoginController {
 	@CrossOrigin(origins = "*")
 	@GetMapping("/getCoach")
     public Teams getTeam() {
-       return data1;
+		if(flag) {
+			return data1;
+		}else {
+			return new Teams();
+		}
+       
     }
 	
 	
