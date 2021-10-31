@@ -65,14 +65,14 @@ class LoginBox extends React.Component {
                 })
               } else if(response.data === "User logged in" && (this.state.role ===  'Tournament Manager')){
                 this.routeChange();
-                alert(response.data)
+                // alert(response.data)
               }
             
             
           })
           .catch(function (response) {
             //handle error
-            alert(response.data )
+            // alert(response.data )
           });
         
 
