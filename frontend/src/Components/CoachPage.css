@@ -3,11 +3,39 @@
 }
 
 .coachpage__content{
+    padding: 40px;
     height: 120rem;
-    background-color: aliceblue;
-    color: #12232e;
+    background-color: white;
+    justify-content: space-evenly;
+    text-align: justify;
 }
 .coachpage__footer{
     height: 20rem;
     background-color: #12232e;
+}
+
+.subheader_separator{
+    background-color: #12232e;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 2rem;
+}
+.subheader_main{
+    font-weight: bold;
+    font-size: large;
+}
+
+.applypage__form_row{
+    display: flex;
+    flex-direction: row;
+}
+
+.applypage__form_row{
+    display: flex;
+    flex-direction: row;
+}
+.applypage__form label {
+    width: 30%;
+    text-align: left;
 }
