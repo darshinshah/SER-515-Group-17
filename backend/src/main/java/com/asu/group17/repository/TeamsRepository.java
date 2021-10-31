@@ -8,6 +8,6 @@ import com.asu.group17.model.Teams;
 @Repository
 public interface TeamsRepository extends JpaRepository<Teams, Integer>{
 
-	Teams findByEmail(String username);
+//	Teams findByEmail(String username);
 
 }

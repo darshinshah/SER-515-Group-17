@@ -20,11 +20,11 @@ public class CoachController {
 	@Autowired
 	public CoachRepository coachRepository;
 	
-	@CrossOrigin(origins = "*")
-	@GetMapping("/getCoachByUserName/{username}")
-	 public Teams findUserById(@PathVariable(value = "username") String username) {
-	     return teamsRepository.findByEmail(username);
-	 }
+//	@CrossOrigin(origins = "*")
+////	@GetMapping("/getCoachByUserName/{username}")
+////	 public Teams findUserById(@PathVariable(value = "username") String username) {
+////	     return teamsRepository.findByEmail(username);
+////	 }
 	
 	
 	
