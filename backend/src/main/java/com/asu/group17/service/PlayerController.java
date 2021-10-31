@@ -31,4 +31,16 @@ public class PlayerController {
     public List<Player> findUserById(@PathVariable(value = "id") int id) {
        return playerRepository.findByteamid(id);
     }
+    
+    @GetMapping("/getplayerbyfname/{fname}")
+    public List<Player> findUserByFname(@PathVariable(value = "fname") String fname) {
+       return playerRepository.findByfirstname(fname);
+    }
+    
+    @GetMapping("/getplayerbyfname/{fname}")
+    public List<Player> findUserByLname(@PathVariable(value = "lname") String lname) {
+       return playerRepository.findBylastname(lname);
+    }
+    
+    
 }
