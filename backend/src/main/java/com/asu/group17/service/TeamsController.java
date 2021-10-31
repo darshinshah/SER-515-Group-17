@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.asu.group17.model.Referee;
 import com.asu.group17.model.Teams;
 import com.asu.group17.repository.TeamsRepository;
 
