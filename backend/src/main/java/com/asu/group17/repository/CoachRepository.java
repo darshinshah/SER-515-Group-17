@@ -3,11 +3,10 @@ package com.asu.group17.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.asu.group17.model.Teams;
+import com.asu.group17.model.Coach;
 
 @Repository
-public interface TeamsRepository extends JpaRepository<Teams, Integer>{
+public interface CoachRepository extends JpaRepository<Coach, Integer>{
 
-	Teams findByEmail(String username);
 
 }

@@ -1,37 +1,34 @@
 package com.asu.group17.service;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.asu.group17.model.Teams;
+import com.asu.group17.repository.CoachRepository;
 import com.asu.group17.repository.TeamsRepository;
 
-
 @RestController
-public class TeamsController {
-	
+@RequestMapping("/v1")
+public class CoachController {
 	@Autowired
 	public TeamsRepository teamsRepository;
+	@Autowired
+	public CoachRepository coachRepository;
 	
 	@CrossOrigin(origins = "*")
-	@GetMapping(value = "/allTeams")
-	public List <Teams>getAllTeams()
-	{
-		return teamsRepository.findAll();
-	}
+	@GetMapping("/getCoachByUserName/{username}")
+	 public Teams findUserById(@PathVariable(value = "username") String username) {
+	     return teamsRepository.findByEmail(username);
+	 }
 	
-	@CrossOrigin(origins = "*")
-	@PostMapping("/saveTeam")
-	public String saveTeam(@RequestBody Teams data) {
-		this.teamsRepository.save(data);
-		return "Team Registered";
-	}
 	
-
+	
 }
+	
+	
+ 

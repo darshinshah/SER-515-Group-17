@@ -16,3 +16,5 @@ CREATE TABLE Coach(
 
 --  SELECT * FROM COACH; 
 --  INSERT INTO COACH VALUES(30001, "Frank", "Rijkaard", "Rijkaard@asu.edu",  56, "male", 2001,"US", "Senior", 70001 );
+-- INSERT INTO TEAMS(teamid, name,country, mgid) VALUES(2001,"ASUS","USA",70001);
+-- INSERT INTO COACH(coachid, firstname,lastname, emailId,age, gender, teamid, location, levelofexp,coachmgrid  ) VALUES (3001, "James", "smith", "james@smith@gmail.com", 45, "male", 2001, "USA", 23, 70001 );
