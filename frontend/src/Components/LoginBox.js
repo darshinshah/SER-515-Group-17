@@ -20,10 +20,10 @@ class LoginBox extends React.Component {
   
    
     routeChange = (e) =>{
-      if(this.state.role=='Tournament Manager')
+      if(this.state.role==='Tournament Manager')
         history.push('/TournamentManagerPage');
       
-      else if(this.state.role=='Coach')
+      else if(this.state.role==='Coach')
         history.push('/CoachPage');
         
       window.location.reload();  
@@ -35,6 +35,12 @@ class LoginBox extends React.Component {
     handleChange = (e) =>{
         const {name,value} = e.target
         this.setState({[name]:value})
+    }
+
+    submitRegister(e){
+      e.preventDefault();
+      history.push('/Registration');
+      window.location.reload();
     }
   
     submitLogin(e) {
@@ -90,9 +96,9 @@ class LoginBox extends React.Component {
                 <label>Roles</label>
                 <select id="dropdown" onChange={this.handleDropdownChange}>
                 <option value="Select Role">Select Role</option>
-                <option value="Player">Player</option>
+                {/* <option value="Player">Player</option> */}
                 <option value="Coach">Coach</option>
-                <option value="Referee">Referee</option>
+                {/* <option value="Referee">Referee</option> */}
                 <option value="Tournament Manager">Tournament Manager</option>
                 </select>
             </div>
@@ -126,6 +132,12 @@ class LoginBox extends React.Component {
               onClick={this
               .submitLogin
               .bind(this)}>Login</button>
+
+            <button
+              type="button"
+              className="login-btn"
+              onClick={this.submitRegister
+              .bind(this)}>Register</button>
           </div>
           <div style={{color: "red"}}>
             {this.state.message}

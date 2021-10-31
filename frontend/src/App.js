@@ -16,6 +16,7 @@ import Apply from './Components/Apply';
 import Maps from './Components/Maps'
 import TournamentManagerPage from './Components/TournamentManagerPage';
 import RefereeTablePage from './Components/RefereeTablePage';
+import Registration from './Components/Registration';
 
 // import NavBarComp from './Components/NavBarComp';
 function App() {
@@ -48,6 +49,7 @@ function App() {
              <Route path="/referees" component={Referee}/>
              <Route path="/forms" component={Forms}/>
              <Route path="/refereeTablePage" component={RefereeTablePage}/>
+             <Route path = "/registration" component = {Registration}/>
            </Switch>
         </div> 
       </BrowserRouter>
