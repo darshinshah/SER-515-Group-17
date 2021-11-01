@@ -21,10 +21,7 @@ class LoginBox extends React.Component {
   
    
     routeChange = (e) =>{
-      if(this.state.role==='Tournament Manager')
-        history.push('/TournamentManagerPage');
-      
-      else if(this.state.role==='Coach')
+      if(this.state.role==='Coach')
         history.push('/CoachPage');
         
       window.location.reload();  
@@ -37,7 +34,7 @@ class LoginBox extends React.Component {
         const {name,value} = e.target
         this.setState({[name]:value})
 
-        if(name == 'role'){
+        if(name === 'role'){
           this.setState({API : value})
         }
     }
@@ -54,10 +51,6 @@ class LoginBox extends React.Component {
         const user = {email: this.state.email,
                     password: this.state.password,
                     role : this.state.role} 
-            
-                    console.log(this.state.role);
-        this.routeChange();
-        console.log(this.state.API);
         axios({
           method: "post",
           url: "http://localhost:8082/v1/" + this.state.role,
@@ -65,23 +58,20 @@ class LoginBox extends React.Component {
           headers: { "Content-Type": "application/json" },
         })
           .then((response)=> {
-              // if(response.data === "User is already present" && !(this.state.role ===  'Tournament Manager')){
-              //   this.routeChange();
-              //   this.setState({
-              //     message : 'Please select appropriate role',
-              //   })
-              // }else if(response.data === "User registered" ){
-              //   this.routeChange();
-              //   this.setState({
-              //     message : 'Please select appropriate role',
-              //   })
-              // } else if(response.data === "User logged in" && (this.state.role ===  'Tournament Manager')){
-              //   this.routeChange();
-              //   // alert(response.data)
-              // }else{
-              //   console.log(response);
-              // }
-              console.log(response.data);
+              if(response.data === "User not registered" ){
+                this.setState({
+                  message : 'Please select appropriate credentials',
+                })
+              } else if(response.data === "User logged in" && (this.state.role ===  'Tournament_Manager')){
+                history.push('/TournamentManagerPage');
+                window.location.reload(); 
+              }else if (response.data.teamId === 0){
+                this.setState({
+                  message : 'Please select appropriate credentials',
+                })
+              }else{
+                this.routeChange();
+              }
             
             
           })
@@ -108,7 +98,7 @@ class LoginBox extends React.Component {
                 {/* <option value="Player">Player</option> */}
                 <option value="Coach">Coach</option>
                 {/* <option value="Referee">Referee</option> */}
-                <option value="Tournament Manager">Tournament_Manager</option>
+                <option value="Tournament_Manager">Tournament_Manager</option>
                 </select>
             </div>
   

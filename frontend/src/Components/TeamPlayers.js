@@ -4,14 +4,23 @@ import axios from 'axios';
 const TeamPlayers = () => {
 
     const [playerData, setPlayerData] = useState([]);
+    const [teamId, setTeamId] = useState("");
 
-    useEffect(() => {
-        axios.get("http://localhost:8080/v1/", { "Content-Type": "application/json" }).then(
+
+    useEffect( () => {
+         axios.get("http://localhost:8082/v1/getCoach", { "Content-Type": "application/json" }).then(
             (response) => {
-                setPlayerData(response.data);
+                setTeamId(response.data.teamId);
+                axios.get("http://localhost:8082/getplayerbyteamid/" + teamId, { "Content-Type": "application/json" }).then(
+                    (res)=> setPlayerData(res.data)
+                ).catch(function (res){
+
+                })
             }
-        )
-    }, []);
+        ).catch(function (response) {
+
+        })
+    });
 
 
 
