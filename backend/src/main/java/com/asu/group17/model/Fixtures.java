@@ -29,9 +29,8 @@ public class Fixtures {
 	}
 
 
-	public Fixtures(long matchId, String homeTeam, String awayTeam, String category, String venue) {
+	public Fixtures(String homeTeam, String awayTeam, String category, String venue) {
 		super();
-		this.matchId = matchId;
 		this.homeTeam = homeTeam;
 		this.awayTeam = awayTeam;
 		this.category = category;
