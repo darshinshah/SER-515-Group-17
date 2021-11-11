@@ -69,7 +69,11 @@ class LoginBox extends React.Component {
                 this.setState({
                   message : 'Please select appropriate credentials',
                 })
-              }else{
+              }else if(response.data === "User logged in" && (this.state.role ===  'Volunteer_Manager')){
+                history.push('/VolunteerManagerPage');
+                window.location.reload();
+              }
+              else{
                 this.routeChange();
               }
             
@@ -98,7 +102,8 @@ class LoginBox extends React.Component {
                 {/* <option value="Player">Player</option> */}
                 <option value="Coach">Coach</option>
                 {/* <option value="Referee">Referee</option> */}
-                <option value="Tournament_Manager">Tournament_Manager</option>
+                <option value="Tournament_Manager">Tournament Manager</option>
+                <option value= "Volunteer_Manager">Volunteer Manager</option>
                 </select>
             </div>
   
