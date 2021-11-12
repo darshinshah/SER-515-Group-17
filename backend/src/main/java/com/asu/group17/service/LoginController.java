@@ -59,6 +59,7 @@ public class LoginController {
 		return "User not registered";
 
 	}
+	
 	public Teams data1;
 	public 	boolean flag = false;
 
@@ -95,6 +96,21 @@ public class LoginController {
        
     }
 	
+	@CrossOrigin(origins = "*")
+	@PostMapping("/Volunteer_Manager")
+	public String getVolunteerManager(@RequestBody Login data) {
+		Iterable<Login> userlist = userRepository.findAll();
+
+		Iterator<Login> it = userlist.iterator();
+		while (it.hasNext()) {
+			Login logindetail = it.next();
+			if (logindetail.getEmail() != null && logindetail.getEmail().equals(data.getEmail()))
+				return "User logged in";
+		}
+
+		return "User not registered";
+
+	}
 	
 	
 	 
