@@ -20,6 +20,7 @@ import Registration from './Components/Registration';
 import CoachPage from './Components/CoachPage';
 import TeamPlayers from './Components/TeamPlayers';
 import VolunteerManagerPage from './Components/VolunteerManagerPage';
+import Volunteer from './Components/Volunteer';
 
 // import NavBarComp from './Components/NavBarComp';
 function App() {
@@ -56,7 +57,8 @@ function App() {
              <Route path="/coachPage" component={CoachPage}/>
              <Route path="/teamPlayers" component={TeamPlayers}/>
              <Route path = "/volunteerManagerPage" component = {VolunteerManagerPage}/>
-           </Switch>
+             <Route path = "/volunteer" component = {Volunteer}/>
+            </Switch>
         </div> 
       </BrowserRouter>
   </div>
