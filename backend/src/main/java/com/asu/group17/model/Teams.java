@@ -32,10 +32,9 @@ public class Teams {
 	
 	String email;
 
-	public Teams(int teamId, String applicationGroup, String teamName, String teamGender, String coachName,
+	public Teams( String applicationGroup, String teamName, String teamGender, String coachName,
 			String association, String contactName, String phoneNumber, String email) {
 		super();
-		this.teamId = teamId;
 		this.applicationGroup = applicationGroup;
 		this.teamName = teamName;
 		this.teamGender = teamGender;
@@ -122,10 +121,5 @@ public class Teams {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
-	
-	
-	
 
 }
