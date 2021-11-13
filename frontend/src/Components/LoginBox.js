@@ -72,8 +72,10 @@ class LoginBox extends React.Component {
               }else if(response.data === "User logged in" && (this.state.role ===  'Volunteer_Manager')){
                 history.push('/VolunteerManagerPage');
                 window.location.reload();
-              }
-              else{
+              }else if(response.data === "User logged in" && (this.state.role ===  'Referee_Manager')){
+                history.push('/RefereeManagerPage');
+                window.location.reload();
+              } else{
                 this.routeChange();
               }
             
@@ -104,6 +106,7 @@ class LoginBox extends React.Component {
                 {/* <option value="Referee">Referee</option> */}
                 <option value="Tournament_Manager">Tournament Manager</option>
                 <option value= "Volunteer_Manager">Volunteer Manager</option>
+                <option value= "Referee_Manager">Referee Manager</option>
                 </select>
             </div>
   
