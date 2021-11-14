@@ -21,6 +21,7 @@ import CoachPage from './Components/CoachPage';
 import TeamPlayers from './Components/TeamPlayers';
 import VolunteerManagerPage from './Components/VolunteerManagerPage';
 import Volunteer from './Components/Volunteer';
+import RefereeManagerPage from './Components/RefereeManagerPage';
 
 // import NavBarComp from './Components/NavBarComp';
 function App() {
@@ -58,6 +59,7 @@ function App() {
              <Route path="/teamPlayers" component={TeamPlayers}/>
              <Route path = "/volunteerManagerPage" component = {VolunteerManagerPage}/>
              <Route path = "/volunteer" component = {Volunteer}/>
+             <Route path = "/refereeManagerPage" component = {RefereeManagerPage}/>
             </Switch>
         </div> 
       </BrowserRouter>
