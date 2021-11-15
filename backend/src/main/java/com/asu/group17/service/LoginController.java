@@ -112,6 +112,22 @@ public class LoginController {
 
 	}
 	
+	@CrossOrigin(origins = "*")
+	@PostMapping("/Referee_Manager")
+	public String getRefereeManager(@RequestBody Login data) {
+		Iterable<Login> userlist = userRepository.findAll();
+
+		Iterator<Login> it = userlist.iterator();
+		while (it.hasNext()) {
+			Login logindetail = it.next();
+			if (logindetail.getEmail() != null && logindetail.getEmail().equals(data.getEmail()))
+				return "User logged in";
+		}
+
+		return "User not registered";
+
+	}
+	
 	
 	 
 	
