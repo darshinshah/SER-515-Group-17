@@ -30,6 +30,10 @@ public class VolunteerController {
 	@CrossOrigin(origins = "*")
 	@PostMapping("/saveVolunteer")
 	public String saveVolunteer(@RequestBody Volunteer data) {
+		boolean flag = true;
+		if(flag) {
+			return "Registration is closed. Please try Next season. Thank you!";
+		}
 		this.volunteerRepository.save(data);
 		return "Volunteer Registered";
 	}

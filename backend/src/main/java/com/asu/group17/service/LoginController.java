@@ -33,6 +33,11 @@ public class LoginController {
 	@CrossOrigin(origins = "*")
 	@PostMapping("/signup")
 	public String saveUser(@RequestBody Login data) {
+		boolean flag = true;
+		if(flag) {
+			return "Registration is closed. Please try Next season. Thank you!";
+		}
+		
 		Iterable<Login> userlist = userRepository.findAll();
 		Iterator<Login> it = userlist.iterator();
 		while (it.hasNext()) {
