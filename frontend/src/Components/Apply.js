@@ -1,6 +1,7 @@
 import './Apply.css';
 import axios from 'axios';
 import React from "react";
+import history from './history';
 export class Apply extends React.Component {
     constructor(props){
         super(props);
@@ -12,7 +13,8 @@ export class Apply extends React.Component {
                 email:'',
                 association:'',
                 contactName:'',
-                phoneNumber:''
+                phoneNumber:'',
+                message:''
            
         }
 
@@ -56,7 +58,16 @@ export class Apply extends React.Component {
             headers: { "Content-Type": "application/json" },
           }).then((response)=>{
             console.log(response.data);
-            alert("Application Submitted");
+            if(response.data ==='Team Registered'){
+                alert("Application Submitted");
+                history.push('/');
+                window.location.reload();
+            }else if(response.data === 'Registration is closed. Please try Next season. Thank you!'){
+                this.setState({
+                    message :'Registration is closed. Please try Next season. Thank you!'
+                })
+            }
+            
           })
 
     }
@@ -162,7 +173,10 @@ export class Apply extends React.Component {
                                 <input type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={this.submitForm
               .bind(this)}/>
                             </div>
-    
+                            <div style={{color: "red"}}>
+                            {this.state.message}
+                            </div>
+                    
     
                         </form>
                     </div>

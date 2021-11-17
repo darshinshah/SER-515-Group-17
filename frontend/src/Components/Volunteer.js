@@ -1,6 +1,7 @@
 import './Apply.css';
 import React from 'react';
 import axios from 'axios';
+import history from './history';
 export class Volunteer extends React.Component{
     constructor(props){
         super(props);
@@ -12,6 +13,7 @@ export class Volunteer extends React.Component{
                 gender:'',
                 phoneNumber:'',
                 city:'',
+                message:''
         }
         this.handleChange = this.handleChange.bind(this);
     }
@@ -33,16 +35,21 @@ export class Volunteer extends React.Component{
                 phoneNumber:this.state.phoneNumber,
                 city:this.state.city,
         }
-        console.log(user);
-
         axios({
             method: "post",
             url: "http://localhost:8082/saveVolunteer",
             data: user,
             headers: { "Content-Type": "application/json" },
           }).then((response)=>{
-            console.log(response.data);
-            alert("Application Submitted");
+              if(response.data === 'Volunteer Registered'){
+                alert("Application Submitted");
+                history.push('/');
+                window.location.reload();
+              }else if(response.data === 'Registration is closed. Please try Next season. Thank you!'){
+                  this.setState({
+                      message : 'Registration is closed. Please try Next season. Thank you!'
+                  })
+              }
           })
 
 
@@ -107,6 +114,9 @@ export class Volunteer extends React.Component{
                             <div className="applypage__form_row" style={{ paddingTop: "5rem" }}>
     
                                 <input type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={this.submitForm.bind(this)}/>
+                            </div>
+                            <div style={{color: "red"}}>
+                            {this.state.message}
                             </div>
     
     

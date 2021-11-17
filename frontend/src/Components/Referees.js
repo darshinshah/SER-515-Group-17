@@ -15,6 +15,7 @@ export class Referee extends React.Component{
                 gender:'',
                 experience:'',
                 availability:'',
+                message:''
             }
            
         }
@@ -44,7 +45,7 @@ export class Referee extends React.Component{
 
         axios({
           method: "post",
-          url: "http://localhost:8080/v1/registerReferee",
+          url: "http://localhost:8082/v1/registerReferee",
           data: user,
           headers: { "Content-Type": "application/json" },
         })
@@ -56,6 +57,10 @@ export class Referee extends React.Component{
               }else if(response.data === "User registered" ){
                 this.setState({
                   message : 'Referee registered',
+                })
+              }else if( response.data === "Registration is closed. Please try Next season. Thank you!"){
+                this.setState({
+                  message : 'Registration is closed. Please try Next season. Thank you!'
                 })
               }
             // console.log(response); 
@@ -118,6 +123,9 @@ export class Referee extends React.Component{
                     </div>
                 </form>
                 <button onClick={this.onCreate.bind(this)}  style={{width:"12rem"}}>submit</button>
+                <div style={{color: "red"}}>
+                {this.state.message}
+                </div>
             </div>
         )
     }

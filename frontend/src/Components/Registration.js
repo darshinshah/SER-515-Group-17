@@ -11,6 +11,7 @@ class Registration extends React.Component{
             email:'',
             password:'',
             role :'',
+            message:''
         };
       this.handleDropdownChange = this.handleDropdownChange.bind(this);
       this.handleChange = this.handleChange.bind(this);
@@ -24,7 +25,8 @@ class Registration extends React.Component{
         const {name,value} = e.target
         this.setState({[name]:value})
     }
-    submitRegister = (e)=>{
+
+    submitRegister = function(e){
         e.preventDefault();
 
         const user = {email: this.state.email,
@@ -43,6 +45,10 @@ class Registration extends React.Component{
                 history.push('/');
                 window.location.reload();
 
+              }else if(response.data === "Registration is closed. Please try Next season. Thank you!"){
+                this.setState({
+                  message : 'Registration is closed. Please try Next season. Thank you!'
+                })
               }
             
           })
@@ -98,6 +104,10 @@ class Registration extends React.Component{
               className="login-btn"
               onClick={this.submitRegister
               .bind(this)}>Register</button>
+
+            <div style={{color: "red"}}>
+            {this.state.message}
+            </div>
           </div>
         </div>
     )
