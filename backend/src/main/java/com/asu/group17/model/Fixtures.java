@@ -21,6 +21,8 @@ public class Fixtures {
 	private String category;
 	
 	private String venue;
+	
+	private String volunteerName;
 
 	
 	public Fixtures() {
@@ -29,12 +31,14 @@ public class Fixtures {
 	}
 
 
-	public Fixtures(String homeTeam, String awayTeam, String category, String venue) {
+	public Fixtures(
+			String homeTeam, String awayTeam, String category, String venue, String volunteerName) {
 		super();
 		this.homeTeam = homeTeam;
 		this.awayTeam = awayTeam;
 		this.category = category;
 		this.venue = venue;
+		this.volunteerName = volunteerName;
 	}
 
 
@@ -86,5 +90,17 @@ public class Fixtures {
 	public void setVenue(String venue) {
 		this.venue = venue;
 	}
+
+
+	public String getVolunteerName() {
+		return volunteerName;
+	}
+
+
+	public void setVolunteerName(String volunteerName) {
+		this.volunteerName = volunteerName;
+	}
+	
+	
 
 }
