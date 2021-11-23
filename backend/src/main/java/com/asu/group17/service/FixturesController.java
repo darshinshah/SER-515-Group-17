@@ -11,8 +11,10 @@ import com.asu.group17.model.Teams;
 import com.asu.group17.model.Volunteer;
 import com.asu.group17.model.Field;
 import com.asu.group17.model.Fixtures;
+import com.asu.group17.model.Referee;
 import com.asu.group17.repository.FieldRepository;
 import com.asu.group17.repository.FixturesRepository;
+import com.asu.group17.repository.RefereeRepository;
 import com.asu.group17.repository.TeamsRepository;
 import com.asu.group17.repository.VolunteerRepository;
 
@@ -31,6 +33,11 @@ public class FixturesController {
 	
 	@Autowired
 	private VolunteerRepository volunteerRepository;
+
+	@Autowired
+	private RefereeRepository refereeRepository;
+	
+	
 	
 	
 	public void createFixtures() {
@@ -40,6 +47,8 @@ public class FixturesController {
 		List<Field> venues = fieldRepository.findAll();
 		
 		List<Volunteer> volunteer = volunteerRepository.findAll();
+		
+		List<Referee> referee = refereeRepository.findAll();
 		
 		
 		
@@ -53,9 +62,10 @@ public class FixturesController {
 					int volunteerVal = i % volunteer.size();
 					String vounteerName = volunteer.get(volunteerVal).getName();
 					
+					int refereeVal = i % referee.size();
+					String refereeName = referee.get(refereeVal).getName();
 					
-					
-					Fixtures f = new Fixtures(teams.get(i).getTeamName(), teams.get(j).getTeamName(), teams.get(i).getApplicationGroup(), venueName, vounteerName);
+					Fixtures f = new Fixtures(teams.get(i).getTeamName(), teams.get(j).getTeamName(), teams.get(i).getApplicationGroup(), venueName, vounteerName, refereeName);
 					
 					this.fixturesRepository.save(f);
 				}					
