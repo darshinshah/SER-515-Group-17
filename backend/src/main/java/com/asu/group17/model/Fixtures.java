@@ -27,6 +27,8 @@ public class Fixtures {
 	private String refereeName;
 	
 	private String date;
+	
+	private String time;
 
 	
 	public Fixtures() {
@@ -36,7 +38,7 @@ public class Fixtures {
 
 
 	public Fixtures(
-			String homeTeam, String awayTeam, String category, String venue, String volunteerName, String refereeName, String date) {
+			String homeTeam, String awayTeam, String category, String venue, String volunteerName, String refereeName, String date, String time) {
 		super();
 		this.homeTeam = homeTeam;
 		this.awayTeam = awayTeam;
@@ -45,6 +47,7 @@ public class Fixtures {
 		this.volunteerName = volunteerName;
 		this.refereeName = refereeName;
 		this.date = date;
+		this.time = time;
 	}
 
 
@@ -126,9 +129,15 @@ public class Fixtures {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	
-	
-	
-	
+
+
+	public String getTime() {
+		return time;
+	}
+
+
+	public void setTime(String time) {
+		this.time = time;
+	}	
 
 }
