@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -13,13 +12,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.util.Pair;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.asu.group17.model.Teams;
-import com.asu.group17.model.Volunteer;
 import com.asu.group17.model.Field;
 import com.asu.group17.model.Fixtures;
 import com.asu.group17.model.Referee;
@@ -58,9 +55,7 @@ public class FixturesController {
 		List<Teams> teams = teamsRepository.findAll();
 		
 		List<Field> venues = fieldRepository.findAll();
-		
-		List<Volunteer> volunteer = volunteerRepository.findAll();
-		
+				
 		List<Referee> referee = refereeRepository.findAll();
 		
 		for(int i=0;i<teams.size();i++) {
@@ -71,13 +66,11 @@ public class FixturesController {
 						int val = j % venues.size();
 						String venueName = venues.get(val).getFieldname();
 						
-						int volunteerVal = j % volunteer.size();
-						String vounteerName = volunteer.get(volunteerVal).getName();
-						
 						int refereeVal = j % referee.size();
 						String refereeName = referee.get(refereeVal).getName();
 						Fixtures f = new Fixtures(teams.get(i).getTeamName(), teams.get(j).getTeamName(), teams.get(i).getApplicationGroup(),
-													venueName, vounteerName, refereeName, null, null, null, null);
+//													venueName, vounteerName, refereeName, null, null, null, null);
+												venueName, "", refereeName, null, null, null, null);
 						
 //						this.fixturesRepository.save(f);
 						this.listOfFixtures.add(f);
@@ -150,7 +143,7 @@ public class FixturesController {
 		createFixtures();
 		return this.fixturesRepository.findAll();
 	}
-	
+		
 	
 	@CrossOrigin(origins = "*")
 	@GetMapping("/getStandings")
