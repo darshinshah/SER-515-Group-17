@@ -12,20 +12,14 @@ class LoginBox extends React.Component {
           password:'',
           role :'',
           message:'',
-          API:''
+          API:'',
+          loggedIn:false
       };
       this.handleDropdownChange = this.handleDropdownChange.bind(this);
       this.handleChange = this.handleChange.bind(this);
-      this.routeChange = this.routeChange.bind(this);
     }
   
-   
-    routeChange = (e) =>{
-      if(this.state.role==='Coach')
-        history.push('/CoachPage');
-        
-      window.location.reload();  
-    }
+
     handleDropdownChange=(e) =>{
       this.setState({ role: e.target.value });
     }
@@ -50,7 +44,12 @@ class LoginBox extends React.Component {
 
         const user = {email: this.state.email,
                     password: this.state.password,
-                    role : this.state.role} 
+                    role : this.state.role} ;
+        if(this.state.email ==='' || this.state.password === '' || this.state.role === '' || this.state.role === 'Select Role'){
+          this.setState({
+            message : 'Please select appropriate credentials',
+          })
+        }else{
         axios({
           method: "post",
           url: "http://localhost:8082/v1/" + this.state.role,
@@ -58,11 +57,15 @@ class LoginBox extends React.Component {
           headers: { "Content-Type": "application/json" },
         })
           .then((response)=> {
+            
               if(response.data === "User not registered" ){
                 this.setState({
                   message : 'Please select appropriate credentials',
                 })
               } else if(response.data === "User logged in" && (this.state.role ===  'Tournament_Manager')){
+                this.setState({
+                  loggedIn: true
+                })
                 history.push('/TournamentManagerPage');
                 window.location.reload(); 
               }else if (response.data.teamId === 0){
@@ -70,13 +73,23 @@ class LoginBox extends React.Component {
                   message : 'Please select appropriate credentials',
                 })
               }else if(response.data === "User logged in" && (this.state.role ===  'Volunteer_Manager')){
+                this.setState({
+                  loggedIn: true
+                })
                 history.push('/VolunteerManagerPage');
                 window.location.reload();
               }else if(response.data === "User logged in" && (this.state.role ===  'Referee_Manager')){
+                this.setState({
+                  loggedIn: true
+                })
                 history.push('/RefereeManagerPage');
                 window.location.reload();
-              } else{
-                this.routeChange();
+              }else if(this.state.role==='Coach'){
+                this.setState({
+                  loggedIn: true
+                })
+                history.push('/CoachPage');
+                window.location.reload(); 
               }
             
             
@@ -85,6 +98,7 @@ class LoginBox extends React.Component {
             //handle error
             // alert(response.data )
           });
+        }
         
 
     }
@@ -101,9 +115,7 @@ class LoginBox extends React.Component {
                 <label>Roles</label>
                 <select id="dropdown" onChange={this.handleDropdownChange}>
                 <option value="Select Role">Select Role</option>
-                {/* <option value="Player">Player</option> */}
                 <option value="Coach">Coach</option>
-                {/* <option value="Referee">Referee</option> */}
                 <option value="Tournament_Manager">Tournament Manager</option>
                 <option value= "Volunteer_Manager">Volunteer Manager</option>
                 <option value= "Referee_Manager">Referee Manager</option>
@@ -153,6 +165,6 @@ class LoginBox extends React.Component {
       );
     }
   
-  }
+}
 
-  export default LoginBox;
+export default LoginBox;

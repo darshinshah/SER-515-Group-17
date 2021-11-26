@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import history from './history';
+import Logout from "./Logout";
 class VolunteerManagerPage extends React.Component{
     constructor(props){
         super(props);
@@ -71,6 +72,7 @@ class VolunteerManagerPage extends React.Component{
         return (
             <div className="refereetablepage">
             <div className="refereetablepage__content">
+                <Logout/>
                 <div className='app-container'>
                     <strong>List of Volunteers Registered</strong>
                     <table>

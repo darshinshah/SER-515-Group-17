@@ -1,6 +1,7 @@
 import './RefereeTablePage.css'
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import Logout from './Logout';
 const RefereeManagerPage = () => {
 
     const [refereeData, setRefereeData] = useState([]);
@@ -16,6 +17,7 @@ const RefereeManagerPage = () => {
         <div className="refereetablepage">
             <div className="refereetablepage__content">
                 <div className='app-container'>
+                <Logout/>
                     <strong>
                     List of referees registered for the tournament:
                     </strong>

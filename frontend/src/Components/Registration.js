@@ -31,32 +31,36 @@ class Registration extends React.Component{
 
         const user = {email: this.state.email,
                     password: this.state.password,
-                    role : this.state.role} 
-            
-        axios({
-          method: "post",
-          url: "http://localhost:8082/v1/signup",
-          data: user,
-          headers: { "Content-Type": "application/json" },
-        })
-          .then((response)=> {
-              if(response.data === "User registered"){
-                alert(response.data)
-                history.push('/');
-                window.location.reload();
-
-              }else if(response.data === "Registration is closed. Please try Next season. Thank you!"){
-                this.setState({
-                  message : 'Registration is closed. Please try Next season. Thank you!'
-                })
-              }
-            
+                    role : this.state.role}
+        if(this.state.email ==='' || this.state.password === '' || this.state.role === '' || this.state.role === 'Select Role'){
+          this.setState({
+            message : 'Please select appropriate credentials',
           })
-          .catch(function (response) {
-            //handle error
-            alert(response.data )
-          });
-        
+        }else{            
+            axios({
+              method: "post",
+              url: "http://localhost:8082/v1/signup",
+              data: user,
+              headers: { "Content-Type": "application/json" },
+            })
+              .then((response)=> {
+                  if(response.data === "User registered"){
+                    alert(response.data)
+                    history.push('/');
+                    window.location.reload();
+
+                  }else if(response.data === "Registration is closed. Please try Next season. Thank you!"){
+                    this.setState({
+                      message : 'Registration is closed. Please try Next season. Thank you!'
+                    })
+                  }
+                
+              })
+              .catch(function (response) {
+                //handle error
+                alert(response.data )
+              });
+        }
 
     }
     render() {

@@ -8,3 +8,14 @@
     border-radius: 12px;
     margin: 0px 10px
 }
+.nav_bar_red_button {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #c7000a;
+    border: 1px solid white;
+    padding: 0.5rem;
+    border-radius: 12px;
+    margin: 0px 10px;
+    float: right
+}
