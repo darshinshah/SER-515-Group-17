@@ -1,5 +1,6 @@
 import './TournamentManagerPage.css';
 import history from './history';
+import Logout from './Logout';
 
 
 const TournamentManagerPage = () => {
@@ -19,6 +20,7 @@ const TournamentManagerPage = () => {
     }
     return (
         <div>
+            <Logout/>
             <button onClick={openTeams}>See List of teams</button>
             <button onClick={openReferees}>See referees</button>
             <button onClick = {openSchedules}>Create the Tournament Schedule and list them</button>

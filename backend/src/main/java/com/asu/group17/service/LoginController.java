@@ -57,7 +57,9 @@ public class LoginController {
 		Iterator<Login> it = userlist.iterator();
 		while (it.hasNext()) {
 			Login logindetail = it.next();
-			if (logindetail.getEmail() != null && logindetail.getEmail().equals(data.getEmail()))
+			if (logindetail.getEmail() != null && logindetail.getEmail().equals(data.getEmail()) 
+												&& logindetail.getPassword().equals(data.getPassword())
+												&& logindetail.getRole().equals(data.getRole()))
 				return "User logged in";
 		}
 
@@ -109,7 +111,9 @@ public class LoginController {
 		Iterator<Login> it = userlist.iterator();
 		while (it.hasNext()) {
 			Login logindetail = it.next();
-			if (logindetail.getEmail() != null && logindetail.getEmail().equals(data.getEmail()))
+			if (logindetail.getEmail() != null && logindetail.getEmail().equals(data.getEmail()) 
+					&& logindetail.getPassword().equals(data.getPassword())
+					&& logindetail.getRole().equals(data.getRole()))
 				return "User logged in";
 		}
 
@@ -125,7 +129,9 @@ public class LoginController {
 		Iterator<Login> it = userlist.iterator();
 		while (it.hasNext()) {
 			Login logindetail = it.next();
-			if (logindetail.getEmail() != null && logindetail.getEmail().equals(data.getEmail()))
+			if (logindetail.getEmail() != null && logindetail.getEmail().equals(data.getEmail()) 
+					&& logindetail.getPassword().equals(data.getPassword())
+					&& logindetail.getRole().equals(data.getRole()))
 				return "User logged in";
 		}
 

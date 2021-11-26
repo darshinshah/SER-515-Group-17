@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './TeamPlayers.css'
 import axios from 'axios';
+import Logout from './Logout';
 const TeamPlayers = () => {
 
     const [playerData, setPlayerData] = useState([]);
@@ -26,6 +27,7 @@ const TeamPlayers = () => {
 
     return (
         <div className='app-container'>
+            <Logout/>
             <table>
                 <thead>
                     <tr>
