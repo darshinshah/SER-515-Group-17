@@ -14,7 +14,7 @@ const Navigation = () => {
          
          <NavBarButton><NavLink to="/" className="navlink">Home</NavLink></NavBarButton>
          <NavBarButton><NavLink to="/teams" className="navlink">Teams</NavLink></NavBarButton>
-         <NavBarButton><NavLink to="/schedules" className="navlink">Schedules</NavLink></NavBarButton>
+         <NavBarButton><NavLink to="/Fixtures" className="navlink">Schedules</NavLink></NavBarButton>
          <NavBarButton><NavLink to="/pointstable" className="navlink">Points Table</NavLink></NavBarButton>
          <NavBarButton><NavLink to="/apply" className="navlink">Apply</NavLink></NavBarButton>
          <NavBarButton><NavLink to="/maps" className="navlink">Maps</NavLink></NavBarButton>
