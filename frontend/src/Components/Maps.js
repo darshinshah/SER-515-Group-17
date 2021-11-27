@@ -15,7 +15,9 @@ class Maps extends React.Component {
       flag:false,
       fieldName:'',
       city:'',
-      matchesData:[]
+      matchesData:[],
+      fieldData:[],
+      obj:{}
     };
 
     this.fieldClicked = this.fieldClicked.bind(this);
@@ -40,30 +42,36 @@ class Maps extends React.Component {
       image : e.image,
       flag :true,
       fieldName : e.fieldname,
-      city : e.city
+      city : e.city,
     }))
+    var data = this.state.obj[this.state.fieldName]
+    this.setState({
+      fieldData : data
+    })
   }
 
   generateMatches=()=>{
     const venuesdata = this.state.MapsData;
     const matchesdata = this.state.matchesData;
-    var obj = {};
-
+    var obj2= {}
     for(let i =0;i<venuesdata.length;i++){
       for(let j =0;j<matchesdata.length;j++){
         if(venuesdata[i].fieldname === matchesdata[j].venue){
           let name = venuesdata[i].fieldname;
-          if(obj[name] === undefined){
-            obj[name] = [];
-            obj[name].push(matchesdata[j]);
+          if(obj2[name] === undefined){
+            obj2[name] = [];
+            obj2[name].push(matchesdata[j]);
           }else{
-            obj[name].push(matchesdata[j]);
+            obj2[name].push(matchesdata[j]);
           }
 
         }
 
       }
     }
+    this.setState({
+      obj: obj2
+    })
   }
 
 
@@ -85,7 +93,7 @@ class Maps extends React.Component {
       //handle error
     });
 
-    axios.get("http://localhost:8082/getFixtures", { "Content-Type": "application/json" }).then(
+    axios.get("http://localhost:8082/v1/getFixturesForFields", { "Content-Type": "application/json" }).then(
             (response) => {
               this.setState(()=>({
                 matchesData: response.data
@@ -120,7 +128,7 @@ class Maps extends React.Component {
 
 
       <div className = "column">
-          <Image value = {this.state.flag} src = {this.state.image} fieldName = {this.state.fieldName} city = {this.state.city}/>
+          <Image value = {this.state.flag} fixtures= {this.state.fieldData} src = {this.state.image} fieldName = {this.state.fieldName} city = {this.state.city}/>
       </div>
    
 
