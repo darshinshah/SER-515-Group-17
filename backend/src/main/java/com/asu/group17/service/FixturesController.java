@@ -143,6 +143,12 @@ public class FixturesController {
 		createFixtures();
 		return this.fixturesRepository.findAll();
 	}
+	
+	@CrossOrigin(origins = "*")
+	@GetMapping("/getMatches")
+	public List<Fixtures> getMatches() {
+		return this.fixturesRepository.findAll();
+	}
 		
 	
 	@CrossOrigin(origins = "*")

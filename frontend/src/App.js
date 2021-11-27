@@ -22,6 +22,7 @@ import RefereeManagerPage from './Components/RefereeManagerPage';
 import SchedulePage from './Components/SchedulePage';
 import VolunteersAssigned from './Components/VolunteersAssigned';
 import Logout from './Components/Logout';
+import Fixtures from './Components/Fixtures';
 
 function App() {
   
@@ -54,6 +55,7 @@ function App() {
              <Route path = "/refereeManagerPage" component = {RefereeManagerPage}/>
              <Route path = "/SchedulePage" component = {SchedulePage}/>
              <Route path = "/VolunteersAssigned" component = {VolunteersAssigned}/>
+             <Route path = "/Fixtures" component = {Fixtures}/>
              <Route path = "/" component = {Logout}/>
             </Switch>
         </div> 

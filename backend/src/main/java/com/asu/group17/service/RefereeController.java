@@ -31,10 +31,10 @@ public class RefereeController {
 	@PostMapping("/registerReferee")
 	public String saveReferee(@RequestBody Referee data) {
 		
-		boolean flag = true;
-		if(flag) {
-			return "Registration is closed. Please try Next season. Thank you!";
-		}
+//		boolean flag = true;
+//		if(flag) {
+//			return "Registration is closed. Please try Next season. Thank you!";
+//		}
 		
 		Iterable<Referee> userlist = refereeRepository.findAll();
 		Iterator<Referee> it = userlist.iterator();

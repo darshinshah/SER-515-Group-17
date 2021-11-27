@@ -29,10 +29,10 @@ public class TeamsController {
 	@CrossOrigin(origins = "*")
 	@PostMapping("/saveTeam")
 	public String saveTeam(@RequestBody Teams data) {
-		boolean flag = true;
-		if(flag) {
-			return "Registration is closed. Please try Next season. Thank you!";
-		}
+//		boolean flag = true;
+//		if(flag) {
+//			return "Registration is closed. Please try Next season. Thank you!";
+//		}
 		this.teamsRepository.save(data);
 		return "Team Registered";
 	}
