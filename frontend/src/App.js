@@ -23,6 +23,7 @@ import SchedulePage from './Components/SchedulePage';
 import VolunteersAssigned from './Components/VolunteersAssigned';
 import Logout from './Components/Logout';
 import Fixtures from './Components/Fixtures';
+import RefereesAssigned from './Components/RefereesAssigned';
 
 function App() {
   
@@ -56,6 +57,7 @@ function App() {
              <Route path = "/SchedulePage" component = {SchedulePage}/>
              <Route path = "/VolunteersAssigned" component = {VolunteersAssigned}/>
              <Route path = "/Fixtures" component = {Fixtures}/>
+             <Route path = "/RefereesAssigned" component = {RefereesAssigned}/>
              <Route path = "/" component = {Logout}/>
             </Switch>
         </div> 

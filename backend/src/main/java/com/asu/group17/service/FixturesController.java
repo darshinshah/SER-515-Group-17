@@ -70,7 +70,7 @@ public class FixturesController {
 						String refereeName = referee.get(refereeVal).getName();
 						Fixtures f = new Fixtures(teams.get(i).getTeamName(), teams.get(j).getTeamName(), teams.get(i).getApplicationGroup(),
 //													venueName, vounteerName, refereeName, null, null, null, null);
-												venueName, "", refereeName, null, null, null, null);
+												venueName, "", "", null, null, null, null);
 						
 //						this.fixturesRepository.save(f);
 						this.listOfFixtures.add(f);

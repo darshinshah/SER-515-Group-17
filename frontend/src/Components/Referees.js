@@ -1,135 +1,129 @@
-import './Referees.css';
+import './Apply.css';
 import React from 'react';
 import axios from 'axios';
-import { Alert } from 'react-bootstrap';
+import history from './history';
 
-export class Referee extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            employee:{
-               
-                name:'',
-                emailId:'',
-                age:'',
-                gender:'',
-                experience:'',
-                availability:'',
-                message:''
-            }
-           
-        }
+export class Referee extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      employee: {
+
+        name: '',
+        emailId: '',
+        age: '',
+        gender: '',
+        experience: '',
+        availability: '',
+        message: ''
+      }
+
     }
-    changeHandler=e=>{
-        const name=e.target.name;
-        const value = e.target.value;
-        this.setState({employee:{
-            ...this.state.employee,
-            [name]:value
-        }});
-    }
+  }
+  changeHandler = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({
+      employee: {
+        ...this.state.employee,
+        [name]: value
+      }
+    });
+  }
 
-    onCreate=(e)=>{
-         console.log(this.state.employee.name);
-        console.log(this.state.employee.emailId);
-        console.log(this.state.employee.age);
-        console.log(this.state.employee.gender);
-
-        console.log(this.state.employee.experience);
-        console.log(this.state.employee.availability);
-        
-        e.preventDefault();
-        const user=this.state.employee;
-
-            
-
-        axios({
-          method: "post",
-          url: "http://localhost:8082/v1/registerReferee",
-          data: user,
-          headers: { "Content-Type": "application/json" },
-        })
-          .then((response)=> {
-              if(response.data === "Referee is already registered!"){
-                this.setState({
-                  message : 'Referee is already registered!',
-                })
-              }else if(response.data === "User registered" ){
-                this.setState({
-                  message : 'Referee registered',
-                })
-              }else if( response.data === "Registration is closed. Please try Next season. Thank you!"){
-                this.setState({
-                  message : 'Registration is closed. Please try Next season. Thank you!'
-                })
-              }
-            // console.log(response); 
-            Alert(response.data);
-            
+  onCreate = (e) => {
+    e.preventDefault();
+    const user = this.state.employee;
+    axios({
+      method: "post",
+      url: "http://localhost:8082/registerReferee",
+      data: user,
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => {
+        if (response.data === "Referee is already registered!") {
+          this.setState({
+            message: 'Referee is already registered!',
           })
-          .catch(function (response) {
-            //handle error
-          });
-        
+          alert(response.data);
+        } else if (response.data === "User registered") {
+          alert(response.data);
+          history.push('/');
+          window.location.reload();
+        } else if (response.data === "Registration is closed. Please try Next season. Thank you!") {
+          this.setState({
+            message: 'Registration is closed. Please try Next season. Thank you!'
+          })
+        }
+      })
+      .catch(function (response) {
+        //handle error
+      });
 
 
-    }
 
-    render(){
-        return(
-            <div >
-                <h2 className="refereedetail">Referee Center for Soccer Tournament</h2>
-                <form className="loginform">
-                    <div className="applypage__form_row">
-                    <p>
-                        <label>  Name <input type="text" placeholder="Enter your name"
-                         name="name" value={this.state.employee.name} onChange={this.changeHandler}></input></label>
-                    </p>
-                    </div>
-                    <div className="applypage__form_row">
-                    <p>
-                        <label> Email <input type="text" placeholder="Enter your email"
-                         name="emailId" value={this.state.employee.emailId} onChange={this.changeHandler}></input></label>
-                    </p>
-                    </div>
-                    <div className="applypage__form_row">
-                    <p>
-                        <label> Age<input type="number" placeholder="Enter your Age"
-                         name="age" value={this.state.employee.age} onChange={this.changeHandler}></input></label>
-                    </p>
-                    </div>
-                    <div className="applypage__form_row">
-                    <p>
-                        <label> Gender <input type="text" placeholder="Enter your gender"
-                         name="gender" value={this.state.employee.gender} onChange={this.changeHandler}></input></label>
-                    </p>
-                    </div>
-                   
-                    <p>
-                        <label> Availability
-                        <select id="dropdown" name="availability" onChange={this.changeHandler}>
-                            <option value="available">Select</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>    
-                        </select>
-                        </label>
-                    </p>
-                   
-                    <div className="applypage__form_row">
-                    <p>
-                        <label> Experience <input type="number" placeholder="Enter exp."
-                         name="experience" value={this.state.employee.experience} onChange={this.changeHandler}></input></label>
-                    </p>
-                    </div>
-                </form>
-                <button onClick={this.onCreate.bind(this)}  style={{width:"12rem"}}>submit</button>
-                <div style={{color: "red"}}>
-                {this.state.message}
-                </div>
-            </div>
-        )
-    }
+  }
+
+  render() {
+    return (
+      <div className="applypage">
+        <div className="applypage__content">
+          <div className="header">
+            Referees Center for the Soccer Tournament
+          </div>
+          <div className="applypage__text">
+            <form className="applypage__form">
+              <div className="subheader_separator subheader_main">Information</div>
+              <div className="applypage__form_row">
+                <label>
+                  Name:
+                </label>
+                <input type="text" name="name" value={this.state.employee.name} onChange={this.changeHandler}></input>
+              </div>
+              <div className="applypage__form_row">
+                <label>
+                  Email:
+                </label>
+                <input type="text" name="emailId" value={this.state.employee.emailId} onChange={this.changeHandler}></input>
+              </div>
+              <div className="applypage__form_row">
+                <label>
+                  Age:
+                </label>
+                <input type="text" name="age" value={this.state.employee.age} onChange={this.changeHandler}></input>
+              </div>
+              <div className="applypage__form_row">
+                <label>
+                  Gender:
+                </label>
+                <input type="text" name="gender" value={this.state.employee.gender} onChange={this.changeHandler}></input>
+              </div>
+              <div className="applypage__form_row">
+                <label>
+                  Availability:
+                </label>
+                <input type="text" name="availability" value={this.state.employee.availability} onChange={this.changeHandler}></input>
+              </div>
+              <div className="applypage__form_row">
+                <label>
+                  Experience:
+                </label>
+                <input type="text" name="experience" value={this.state.employee.experience} onChange={this.changeHandler}></input>
+              </div>
+              <div className="applypage__form_row" style={{ paddingTop: "5rem" }}>
+                <input type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={this.onCreate.bind(this)} />
+              </div>
+              <div style={{ color: "red" }}>
+                {this.state.employee.message}
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    )
+  }
 
 }
-  
+
 export default Referee;
