@@ -19,11 +19,12 @@ const TournamentManagerPage = () => {
         window.location.reload();
     }
     return (
-        <div>
+        <div className="button_container">
+            
+            <button className="tournament_manager_buttons" onClick={openTeams}>See List of teams</button>
+            <button className="tournament_manager_buttons" onClick={openReferees}>See referees</button>
+            <button className="tournament_manager_buttons" onClick = {openSchedules}>Create the Tournament Schedule and list them</button>
             <Logout/>
-            <button onClick={openTeams}>See List of teams</button>
-            <button onClick={openReferees}>See referees</button>
-            <button onClick = {openSchedules}>Create the Tournament Schedule and list them</button>
         </div>
 
     );

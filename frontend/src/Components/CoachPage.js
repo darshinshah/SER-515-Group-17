@@ -60,7 +60,7 @@ const CoachPage = () => {
                         <label>{teamData.association}</label>
                     </div>
                 {/* <button style="padding">Display list of players</button> */}
-                    <button style={{ padding: 10 }} onClick={openPlayers}>Display list of players</button>
+                    <button className = "coachpage_buttons" style={{ padding: 10 }} onClick={openPlayers}>Display list of players</button>
             </div>
 
             <div className="coachpage__footer">

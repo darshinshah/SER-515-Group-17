@@ -2,6 +2,7 @@ import './Apply.css';
 import React from 'react';
 import axios from 'axios';
 import history from './history';
+import './Volunteer.css'
 export class Volunteer extends React.Component{
     constructor(props){
         super(props);
@@ -113,7 +114,7 @@ export class Volunteer extends React.Component{
                            
                             <div className="applypage__form_row" style={{ paddingTop: "5rem" }}>
     
-                                <input type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={this.submitForm.bind(this)}/>
+                                <input className= "volunteeer_page_buttons" type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={this.submitForm.bind(this)}/>
                             </div>
                             <div style={{color: "red"}}>
                             {this.state.message}

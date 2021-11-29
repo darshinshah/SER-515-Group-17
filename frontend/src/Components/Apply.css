@@ -50,3 +50,13 @@
 .applypage__text li {
     padding-top: 10px;
 }
+.applypage_buttons {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #338978;
+    border: 1px solid grey;
+    padding: 0.5rem;
+    border-radius: 12px;
+    margin: 0px 10px
+}

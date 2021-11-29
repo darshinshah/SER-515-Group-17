@@ -5,6 +5,7 @@
     background-color: white;
     justify-content: space-evenly;
     text-align: justify;
+    padding: 40px;
 }
 .aboutpage__footer{
     height: 10rem;
