@@ -24,6 +24,7 @@ import VolunteersAssigned from './Components/VolunteersAssigned';
 import Logout from './Components/Logout';
 import Fixtures from './Components/Fixtures';
 import RefereesAssigned from './Components/RefereesAssigned';
+import PointsTable from './Components/PointsTable';
 
 function App() {
   
@@ -58,6 +59,7 @@ function App() {
              <Route path = "/VolunteersAssigned" component = {VolunteersAssigned}/>
              <Route path = "/Fixtures" component = {Fixtures}/>
              <Route path = "/RefereesAssigned" component = {RefereesAssigned}/>
+             <Route path = "/PointsTable" component = {PointsTable}/>
              <Route path = "/" component = {Logout}/>
             </Switch>
         </div> 
