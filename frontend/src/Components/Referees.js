@@ -2,6 +2,7 @@ import './Apply.css';
 import React from 'react';
 import axios from 'axios';
 import history from './history';
+import './Referees.css';
 
 export class Referee extends React.Component {
   constructor(props) {
@@ -111,7 +112,7 @@ export class Referee extends React.Component {
                 <input type="text" name="experience" value={this.state.employee.experience} onChange={this.changeHandler}></input>
               </div>
               <div className="applypage__form_row" style={{ paddingTop: "5rem" }}>
-                <input type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={this.onCreate.bind(this)} />
+                <input className="referee_page_buttons" type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={this.onCreate.bind(this)} />
               </div>
               <div style={{ color: "red" }}>
                 {this.state.employee.message}

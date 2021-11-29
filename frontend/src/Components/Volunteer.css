@@ -1,10 +1,4 @@
-.button_container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: white;
-}
-.tournament_manager_buttons{
+.volunteeer_page_buttons{
     font-size: 1rem;
     font-weight: bold;
     color: white;

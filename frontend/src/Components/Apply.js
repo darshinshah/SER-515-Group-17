@@ -170,7 +170,7 @@ export class Apply extends React.Component {
                             </div>
                             <div className="applypage__form_row" style={{ paddingTop: "5rem" }}>
     
-                                <input type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={this.submitForm
+                                <input className="applypage_buttons" type="submit" value="Submit Form" style={{ width: "12rem" }} onClick={this.submitForm
               .bind(this)}/>
                             </div>
                             <div style={{color: "red"}}>
