@@ -6,7 +6,7 @@ const RefereeTablePage = () => {
     const [refereeData, setRefereeData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8082/v1/getReferees", { "Content-Type": "application/json" }).then(
+        axios.get("http://localhost:8082/getReferees", { "Content-Type": "application/json" }).then(
             (response) => {
                 setRefereeData(response.data);
             }

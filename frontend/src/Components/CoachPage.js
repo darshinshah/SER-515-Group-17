@@ -10,7 +10,6 @@ const CoachPage = () => {
     useEffect( () => {
         axios.get("http://localhost:8082/v1/getCoach", { "Content-Type": "application/json" }).then(
             (response) => {
-                // console.log(response);
                 setTeamData(response.data);
             }
         )
