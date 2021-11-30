@@ -27,6 +27,8 @@ const Fixtures = () => {
                             <th>Home Team</th>
                             <th>Away Team</th>
                             <th>Venue</th>
+                            <th>Referee Name</th>
+                            <th>Volunteer Name</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,6 +40,8 @@ const Fixtures = () => {
                                 <td>{data.homeTeam}</td>
                                 <td>{data.awayTeam}</td>                  
                                 <td>{data.venue}</td>
+                                <td>{data.refereeName}</td>
+                                <td>{data.volunteerName}</td>
                             </tr>
                         ))}
                     </tbody>

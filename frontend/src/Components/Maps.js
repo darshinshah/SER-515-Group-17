@@ -38,12 +38,12 @@ class Maps extends React.Component {
 
   fieldClicked = (e) =>{
 
-    this.setState(()=>({
+    this.setState({
       image : e.image,
       flag :true,
       fieldName : e.fieldname,
       city : e.city,
-    }))
+    })
     var data = this.state.obj[this.state.fieldName]
     this.setState({
       fieldData : data

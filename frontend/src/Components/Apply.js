@@ -57,7 +57,6 @@ export class Apply extends React.Component {
             data: team,
             headers: { "Content-Type": "application/json" },
           }).then((response)=>{
-            console.log(response.data);
             if(response.data ==='Team Registered'){
                 alert("Application Submitted");
                 history.push('/');

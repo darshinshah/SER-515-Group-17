@@ -19,13 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.asu.group17.model.Teams;
 import com.asu.group17.model.Field;
 import com.asu.group17.model.Fixtures;
-import com.asu.group17.model.Referee;
 import com.asu.group17.repository.FieldRepository;
 import com.asu.group17.repository.FixturesRepository;
-import com.asu.group17.repository.RefereeRepository;
 import com.asu.group17.repository.TeamsRepository;
-import com.asu.group17.repository.VolunteerRepository;
-
 
 @RestController
 public class FixturesController {
@@ -39,16 +35,7 @@ public class FixturesController {
 	@Autowired
 	private FieldRepository fieldRepository;
 	
-	@Autowired
-	private VolunteerRepository volunteerRepository;
-
-	@Autowired
-	private RefereeRepository refereeRepository;
-	
 	public List<Fixtures> listOfFixtures =  new ArrayList<Fixtures>();
-	
-	
-	
 	
 	public void createFixtures() {
 		
@@ -56,7 +43,7 @@ public class FixturesController {
 		
 		List<Field> venues = fieldRepository.findAll();
 				
-		List<Referee> referee = refereeRepository.findAll();
+		this.listOfFixtures.clear();
 		
 		for(int i=0;i<teams.size();i++) {
 			for(int j=0;j<teams.size();j++) {
@@ -66,13 +53,9 @@ public class FixturesController {
 						int val = j % venues.size();
 						String venueName = venues.get(val).getFieldname();
 						
-						int refereeVal = j % referee.size();
-						String refereeName = referee.get(refereeVal).getName();
 						Fixtures f = new Fixtures(teams.get(i).getTeamName(), teams.get(j).getTeamName(), teams.get(i).getApplicationGroup(),
-//													venueName, vounteerName, refereeName, null, null, null, null);
 												venueName, "", "", null, null, null, null);
 						
-//						this.fixturesRepository.save(f);
 						this.listOfFixtures.add(f);
 					}
 					
@@ -85,7 +68,6 @@ public class FixturesController {
 	
 	public void generateDateandTime() {
 		
-//		List<Fixtures> fixtures = this.fixturesRepository.findAll();
 		List<Fixtures> fixtures = this.listOfFixtures;
 		Collections.shuffle(fixtures);
 		int size = fixtures.size();
@@ -154,8 +136,6 @@ public class FixturesController {
 	@CrossOrigin(origins = "*")
 	@GetMapping("/getStandings")
 	public HashMap<String,Integer[]> getStandings() {
-//		this.fixturesRepository.deleteAll();
-//		createFixtures();
 		List<Fixtures> fixtures = this.fixturesRepository.findAll();
 		HashMap<String, Integer[]> winningMap = new HashMap<>();
 		for(int i =0;i<fixtures.size();i++) {
